@@ -3,225 +3,619 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Doe | Software Engineer</title>
+    <meta name="description" content="Professional portfolio of Alex Doe - Software Engineer specializing in innovative digital solutions">
     
-    <!-- SEO Meta Tags -->
-    <title>Alex Doe | Software Engineer & CSE Student</title>
-    <meta name="description" content="Personal portfolio of Alex Doe, a passionate Computer Science Engineering student and aspiring Software Engineer specializing in web development and problem-solving.">
-    <meta name="keywords" content="Portfolio, CSE Student, Software Engineer, Web Developer, Full Stack Developer, Alex Doe">
-    <meta name="author" content="Alex Doe">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-domain.com/">
-    <meta property="og:title" content="Alex Doe | Software Engineer & CSE Student">
-    <meta property="og:description" content="Personal portfolio of Alex Doe, a passionate Computer Science Engineering student and aspiring Software Engineer.">
-    <meta property="og:image" content="https://placehold.co/1200x630/1a202c/ffffff?text=Alex+Doe">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://your-domain.com/">
-    <meta property="twitter:title" content="Alex Doe | Software Engineer & CSE Student">
-    <meta property="twitter:description" content="Personal portfolio of Alex Doe, a passionate Computer Science Engineering student and aspiring Software Engineer.">
-    <meta property="twitter:image" content="https://placehold.co/1200x630/1a202c/ffffff?text=Alex+Doe">
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://placehold.co/32x32/4f46e5/ffffff?text=AD" type="image/png">
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts: Inter -->
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-
-</head>
-<body class="antialiased">
-
-    <!-- Header -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glassmorphism">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-white hover:text-indigo-400 transition-colors">Alex Doe</a>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#about" class="text-slate-300 hover:text-indigo-400 transition-colors">About</a>
-                <a href="#experience" class="text-slate-300 hover:text-indigo-400 transition-colors">Experience</a>
-                <a href="#education" class="text-slate-300 hover:text-indigo-400 transition-colors">Education</a>
-                <a href="#contact" class="text-slate-300 hover:text-indigo-400 transition-colors">Contact</a>
-            </div>
-             <a href="#contact" class="hidden md:block bg-indigo-600 text-white px-5 py-2 rounded-md hover:bg-indigo-700 transition-transform duration-300 hover:scale-105">
-                Hire Me
-            </a>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4" />
-                </svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block py-2 px-6 text-sm hover:bg-slate-700">About</a>
-            <a href="#experience" class="block py-2 px-6 text-sm hover:bg-slate-700">Experience</a>
-            <a href="#education" class="block py-2 px-6 text-sm hover:bg-slate-700">Education</a>
-            <a href="#contact" class="block py-2 px-6 text-sm hover:bg-slate-700">Contact</a>
-        </div>
-    </header>
-
-    <main class="container mx-auto px-6">
-
-        <!-- Home/Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center text-center">
-            <div class="max-w-3xl">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-4">
-                    Hi, I'm Alex Doe
-                </h1>
-                <h2 class="text-2xl md:text-3xl font-semibold mb-6">
-                    I'm a <span id="typed-text" class="gradient-text"></span><span class="typed-cursor">|</span>
-                </h2>
-                <p class="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
-                    A Computer Science student with a passion for building innovative and efficient software solutions. Welcome to my corner of the internet.
-                </p>
-                <div class="flex justify-center space-x-4">
-                    <a href="#contact" class="bg-indigo-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-indigo-700 transition-transform duration-300 hover:scale-105">Get in Touch</a>
-                    <a href="/alex-doe-resume.pdf" download class="bg-slate-700 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-slate-600 transition-transform duration-300 hover:scale-105">Download CV</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-20 md:py-32 reveal">
-            <div class="grid md:grid-cols-5 gap-12 items-center">
-                <div class="md:col-span-2">
-                    <img src="https://placehold.co/600x600/0f172a/a78bfa?text=Profile" alt="A professional photo of Alex Doe" class="rounded-lg shadow-2xl w-full h-auto object-cover">
-                </div>
-                <div class="md:col-span-3">
-                    <h2 class="text-4xl font-bold text-white mb-4">About Me</h2>
-                    <p class="text-lg text-slate-400 mb-4">
-                        Hello! I'm Alex, a dedicated and curious Computer Science Engineering student. From my first "Hello World" program, I was captivated by the power of code to solve real-world problems and create amazing digital experiences.
-                    </p>
-                    <p class="text-lg text-slate-400 mb-6">
-                        My journey in tech is driven by a constant desire to learn and grow. I thrive in collaborative environments and enjoy breaking down complex challenges into manageable components. I'm currently focusing on backend development and cloud technologies, aiming to build scalable and robust systems.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/your-username" target="_blank" class="text-slate-400 hover:text-indigo-400 transition-colors">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
-                        </a>
-                        <a href="https://linkedin.com/in/your-username" target="_blank" class="text-slate-400 hover:text-indigo-400 transition-colors">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
-        <!-- External Links Section -->
-        <section class="py-20 md:py-24 text-center reveal">
-            <h2 class="text-4xl font-bold text-white mb-4">Explore More</h2>
-            <p class="text-lg text-slate-400 mb-12 max-w-2xl mx-auto">
-                Dive deeper into my work and capabilities. The following sections showcase my technical skills, projects I've built, and my thoughts on technology.
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <a href="/skills.html" class="glassmorphism p-8 rounded-lg text-center hover:bg-slate-700/50 transform hover:-translate-y-2 transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-2">My Skills</h3>
-                    <p class="text-slate-400">The tools and technologies I use to bring ideas to life.</p>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000000; /* Total black background */
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .glass-dark {
+            background: rgba(10, 10, 10, 0.4); /* Slightly lighter glass for depth */
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Text gradient for the new theme */
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Glow effect for the new theme */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Hover lift with updated shadow */
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1); /* Subtle white glow shadow */
+        }
+        
+        /* Smooth reveal animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Typing animation with white cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #ffffff;
+            font-weight: 300;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* Particle canvas */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        /* Custom scrollbar for the new theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #ffffff, #888888);
+            border-radius: 10px;
+        }
+        
+        /* Navigation dots for the new theme */
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            width: 24px;
+            border-radius: 4px;
+            background: #ffffff;
+        }
+        
+        /* Magnetic button effect */
+        .magnetic-btn {
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Stagger animation */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-white/5">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="text-2xl font-bold text-gradient">AD</a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
+                    <a href="#work" class="text-gray-300 hover:text-white transition-colors duration-300">Work</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+                </div>
+                
+                <a href="#contact" class="hidden md:block px-6 py-2 bg-white text-black rounded-full hover-lift font-medium transition-colors duration-300 hover:bg-gray-200">
+                    Let's Talk
                 </a>
-                <a href="/projects.html" class="glassmorphism p-8 rounded-lg text-center hover:bg-slate-700/50 transform hover:-translate-y-2 transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-2">Projects</h3>
-                    <p class="text-slate-400">A collection of my work, from web apps to personal experiments.</p>
-                </a>
-                <a href="/tech-stack.html" class="glassmorphism p-8 rounded-lg text-center hover:bg-slate-700/50 transform hover:-translate-y-2 transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-2">Tech Stack</h3>
-                    <p class="text-slate-400">My preferred frameworks, libraries, and development tools.</p>
-                </a>
-                <a href="/blog.html" class="glassmorphism p-8 rounded-lg text-center hover:bg-slate-700/50 transform hover:-translate-y-2 transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-2">Blog</h3>
-                    <p class="text-slate-400">Where I share my thoughts, learnings, and tutorials.</p>
-                </a>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="py-20 md:py-32 reveal">
-            <h2 class="text-4xl font-bold text-white mb-12 text-center">Professional Experience</h2>
-            <div class="relative max-w-3xl mx-auto">
-                <!-- Timeline Line -->
-                <div class="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-slate-700"></div>
-                <!-- Timeline Item 1 -->
-                <div class="relative mb-12">
-                    <div class="md:flex items-center md:justify-end md:space-x-8">
-                        <div class="md:w-1/2"></div>
-                        <div class="md:w-1/2 p-6 glassmorphism rounded-lg">
-                            <p class="text-sm text-indigo-400 font-semibold mb-1">June 2024 - Aug 2024</p>
-                            <h3 class="text-xl font-bold text-white">Software Engineer Intern</h3>
-                            <p class="text-slate-400 mb-2">Tech Solutions Inc.</p>
-                            <p class="text-slate-400 text-sm">Contributed to the development of a new feature for the company's flagship product, improving performance by 15%.</p>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/5">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#home" class="block text-gray-300 hover:text-white transition-colors">Home</a>
+                <a href="#about" class="block text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#work" class="block text-gray-300 hover:text-white transition-colors">Work</a>
+                <a href="#contact" class="block text-gray-300 hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Navigation Dots -->
+    <div class="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col space-y-4">
+        <div class="nav-dot active" data-section="home"></div>
+        <div class="nav-dot" data-section="about"></div>
+        <div class="nav-dot" data-section="showcase"></div>
+        <div class="nav-dot" data-section="work"></div>
+        <div class="nav-dot" data-section="contact"></div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative z-10">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-8 animate-fadeInUp">Welcome to my universe</p>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp stagger-1">
+                    <span class="font-display font-normal">I'm</span> 
+                    <span class="text-gradient">Alex Doe</span>
+                </h1>
+                <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fadeInUp stagger-2">
+                    <span class="typing-cursor">Software Engineer</span>
+                </p>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 animate-fadeInUp stagger-3">
+                    Crafting elegant solutions to complex problems
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp stagger-4">
+                    <a href="#work" class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200">
+                        Explore My Work
+                    </a>
+                    <button class="px-8 py-4 glass border border-white/10 text-white rounded-full hover-lift font-medium">
+                        Download Resume
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+                <div class="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center">
+                    <div class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="min-h-screen flex items-center relative z-10 py-20">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <div class="order-2 lg:order-1">
+                    <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">About Me</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        Passionate about <span class="text-gradient">innovation</span>
+                    </h2>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        A dedicated engineer with a vision for the future of technology.
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Specializing in creating seamless digital experiences that bridge the gap between functionality and aesthetics.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="glass p-4 rounded-lg">
+                            <p class="text-3xl font-bold text-gradient mb-1">50+</p>
+                            <p class="text-sm text-gray-400">Projects Completed</p>
+                        </div>
+                        <div class="glass p-4 rounded-lg">
+                            <p class="text-3xl font-bold text-gradient mb-1">3+</p>
+                            <p class="text-sm text-gray-400">Years Experience</p>
                         </div>
                     </div>
-                    <div class="absolute left-1/2 -translate-x-1/2 -bottom-4 w-8 h-8 bg-slate-700 rounded-full border-4 border-indigo-500"></div>
-                </div>
-                <!-- Timeline Item 2 -->
-                <div class="relative mb-12">
-                    <div class="md:flex items-center md:flex-row-reverse md:space-x-reverse md:space-x-8">
-                        <div class="md:w-1/2"></div>
-                        <div class="md:w-1/2 p-6 glassmorphism rounded-lg">
-                            <p class="text-sm text-indigo-400 font-semibold mb-1">May 2023 - July 2023</p>
-                            <h3 class="text-xl font-bold text-white">Web Development Intern</h3>
-                            <p class="text-slate-400 mb-2">Creative Agency LLC</p>
-                            <p class="text-slate-400 text-sm">Assisted in building and maintaining client websites using modern frontend frameworks. Worked with a team to deploy 5 new sites.</p>
+                    
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </div>
+                        <div class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </div>
+                        <div class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
                         </div>
                     </div>
-                    <div class="absolute left-1/2 -translate-x-1/2 -bottom-4 w-8 h-8 bg-slate-700 rounded-full border-4 border-indigo-500"></div>
+                </div>
+                
+                <div class="order-1 lg:order-2 relative">
+                    <div class="relative floating">
+                        <div class="absolute inset-0 bg-white rounded-2xl blur-3xl opacity-10"></div>
+                        <img src="https://placehold.co/600x600/000000/FFFFFF?text=AD" alt="Profile" class="relative rounded-2xl w-full max-w-md mx-auto glass">
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="py-20 md:py-32 reveal">
-            <h2 class="text-4xl font-bold text-white mb-12 text-center">Education</h2>
-            <div class="max-w-2xl mx-auto glassmorphism p-8 rounded-lg">
-                <p class="text-sm text-indigo-400 font-semibold mb-1">2021 - 2025 (Expected)</p>
-                <h3 class="text-2xl font-bold text-white">Bachelor of Technology in Computer Science & Engineering</h3>
-                <p class="text-slate-400">University of Technology</p>
-                <p class="text-slate-400 mt-4">
-                    Relevant Coursework: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks.
+        </div>
+    </section>
+    
+    <!-- Showcase Section -->
+    <section id="showcase" class="min-h-screen flex items-center relative z-10 py-20">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Explore</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    My <span class="text-gradient">Digital Universe</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Dive deeper into my expertise and creative work
                 </p>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 md:py-32 text-center reveal">
-            <h2 class="text-4xl font-bold text-white mb-4">Get In Touch</h2>
-            <p class="text-lg text-slate-400 mb-8 max-w-2xl mx-auto">
-                I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, feel free to reach out. I'll get back to you as soon as possible!
-            </p>
-            <a href="mailto:alex.doe@email.com" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-indigo-700 transition-transform duration-300 hover:scale-105">
-                Say Hello
-            </a>
-        </section>
-    </main>
-
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
+                    <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Skills</h3>
+                    <p class="text-gray-400 text-sm">Technical expertise</p>
+                </a>
+                
+                <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
+                    <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Projects</h3>
+                    <p class="text-gray-400 text-sm">Portfolio showcase</p>
+                </a>
+                
+                <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
+                    <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Tech Stack</h3>
+                    <p class="text-gray-400 text-sm">Tools & frameworks</p>
+                </a>
+                
+                <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
+                    <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Blog</h3>
+                    <p class="text-gray-400 text-sm">Thoughts & insights</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Work Experience Section -->
+    <section id="work" class="min-h-screen flex items-center relative z-10 py-20">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Experience</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    Professional <span class="text-gradient">Journey</span>
+                </h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-1">Software Engineer</h3>
+                            <p class="text-gray-400">Tech Company</p>
+                        </div>
+                        <span class="text-sm text-gray-500 mt-2 md:mt-0">2024 - Present</span>
+                    </div>
+                    <p class="text-gray-300">Building scalable solutions</p>
+                </div>
+                
+                <div class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-1">Frontend Developer</h3>
+                            <p class="text-gray-400">Digital Agency</p>
+                        </div>
+                        <span class="text-sm text-gray-500 mt-2 md:mt-0">2023 - 2024</span>
+                    </div>
+                    <p class="text-gray-300">Crafting user experiences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen flex items-center relative z-10 py-20">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Get in Touch</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Let's Create <span class="text-gradient">Something Amazing</span>
+                </h2>
+                <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
+                    Ready to bring your ideas to life? Let's connect and explore the possibilities.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="mailto:hello@alexdoe.com" class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200">
+                        Send Email
+                    </a>
+                    <a href="#" class="px-8 py-4 glass border border-white/10 text-white rounded-full hover-lift font-medium">
+                        Schedule Call
+                    </a>
+                </div>
+                
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Dribbble</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
-    <footer class="border-t border-slate-800">
-        <div class="container mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <p class="text-slate-400">&copy; 2025 Alex Doe. All rights reserved.</p>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-                <a href="https://github.com/your-username" target="_blank" class="text-slate-400 hover:text-indigo-400 transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
-                </a>
-                <a href="https://linkedin.com/in/your-username" target="_blank" class="text-slate-400 hover:text-indigo-400 transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
-                </a>
-                <a href="https://twitter.com/your-username" target="_blank" class="text-slate-400 hover:text-indigo-400 transition-colors">
-                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 16 16"><path d="M9.29 6.55L15.054.5h-1.35L8.83 5.82 4.9 0.5H0l5.99 8.7L0 15.5h1.35l5.08-5.6 4.19 5.6h4.9L9.29 6.55zm-1.8 2.06L6.87 7.78 1.75 1.05h2.1l4.47 5.96 0.62 0.82 5.5 7.23h-2.1L7.49 8.61z" /></svg>
-                </a>
+    <footer class="relative z-10 glass-dark border-t border-white/5 py-8">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2025 Alex Doe. Crafted with passion.</p>
+                <p class="text-gray-400 text-sm mt-4 md:mt-0">Design & Code by Alex</p>
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Particle animation
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        let particles = [];
+        const particleCount = 300; // Increased star count
+        
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.2; // Smaller, more star-like sizes
+                this.speedX = Math.random() * 0.4 - 0.2;
+                this.speedY = Math.random() * 0.4 - 0.2;
+                this.opacity = Math.random() * 0.8 + 0.1;
+                // For twinkling effect
+                this.dOpacity = (Math.random() - 0.5) * 0.01;
+            }
+            
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                
+                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                
+                // Twinkle effect
+                this.opacity += this.dOpacity;
+                if (this.opacity < 0.1 || this.opacity > 0.9) {
+                    this.dOpacity *= -1;
+                }
+            }
+            
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`; // White stars
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        
+        function init() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            // Draw connections (constellations)
+            particles.forEach((a, index) => {
+                particles.slice(index + 1).forEach(b => {
+                    const distance = Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
+                    if (distance < 120) {
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 120)})`; // White connections
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
+                        ctx.stroke();
+                    }
+                });
+            });
+            
+            requestAnimationFrame(animate);
+        }
+        
+        init();
+        animate();
+        
+        // Window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init(); // Re-initialize stars on resize
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scroll and nav dots
+        const sections = document.querySelectorAll('section');
+        const navDots = document.querySelectorAll('.nav-dot');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    navDots.forEach(dot => {
+                        dot.classList.remove('active');
+                        // Handle showcase section having multiple dots
+                        const dotSection = dot.dataset.section;
+                        if (dotSection === sectionId) {
+                            dot.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Nav dot click
+        navDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const sectionId = dot.dataset.section;
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // Typing animation
+        const typingText = document.querySelector('.typing-cursor');
+        const texts = ['Software Engineer', 'Problem Solver', 'Creative Thinker', 'Tech Enthusiast'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(type, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+        
+        // Wait for the font to load before starting the typing animation
+        document.fonts.ready.then(() => {
+            type();
+        });
 
-    <script src="script.js"></script>
+        
+        // Magnetic button effect
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+    </script>
 </body>
 </html>
-
