@@ -1,302 +1,375 @@
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #000000; /* Total black background */
-            color: #ffffff;
-            overflow-x: hidden;
-            /* Initially prevent scrolling until orb is clicked */
-            overflow-y: hidden; 
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        /* Reveal animation for main content */
-        #main-content, #hero-buttons {
-            opacity: 0;
-            pointer-events: none;
-        }
+body {
+  font-family: "Inter", sans-serif;
+  background: #000000; /* Total black background */
+  color: #ffffff;
+  overflow-x: hidden;
+  /* Initially prevent scrolling until orb is clicked */
+  overflow-y: hidden;
+}
 
-        body.content-revealed #main-content {
-            opacity: 1;
-            transition: opacity 1.5s ease-out;
-            pointer-events: auto;
-        }
-        
-        body.content-revealed #hero-buttons {
-            opacity: 1;
-            transition: opacity 1s ease-in-out 0.5s; /* Delay the button fade-in */
-            pointer-events: auto;
-        }
+/* Reveal animation for main content */
+#main-content,
+#hero-buttons {
+  opacity: 0;
+  pointer-events: none;
+}
 
-        .font-display {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        /* Glassmorphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .glass-dark {
-            background: rgba(10, 10, 10, 0.4); /* Slightly lighter glass for depth */
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Text gradient for the new theme */
-        .text-gradient {
-            background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Glow effect for the new theme */
-        .glow-text {
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-        }
-        
-        /* Hover lift with updated shadow */
-        .hover-lift {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1); /* Subtle white glow shadow */
-        }
-        
-        /* Smooth reveal animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .animate-fadeInUp {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        /* Typing animation with white cursor */
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s infinite;
-            color: #ffffff;
-            font-weight: 300;
-        }
-        
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-        
-        /* Particle canvas */
-        #particles-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
-        
-        /* Custom scrollbar for the new theme */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #ffffff, #888888);
-            border-radius: 10px;
-        }
-        
-        /* Navigation dots for the new theme */
-        .nav-dot-container {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
-        }
+body.content-revealed #main-content {
+  opacity: 1;
+  transition: opacity 1.5s ease-out;
+  pointer-events: auto;
+}
 
-        body.content-revealed .nav-dot-container {
-            opacity: 1;
-            visibility: visible;
-        }
+body.content-revealed #hero-buttons {
+  opacity: 1;
+  transition: opacity 1s ease-in-out 0.5s; /* Delay the button fade-in */
+  pointer-events: auto;
+}
 
-        .nav-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .nav-dot.active {
-            width: 24px;
-            border-radius: 4px;
-            background: #ffffff;
-        }
-        
-        /* Magnetic button effect */
-        .magnetic-btn {
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        /* Floating animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        /* Stagger animation */
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
+.font-display {
+  font-family: "Playfair Display", serif;
+}
 
-        /* --- NEW UNIVERSE ORB STYLES --- */
-        #universe-orb-container {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 20;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px;
-        }
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-        #universe-orb {
-            width: 200px;
-            height: 200px;
-            position: relative;
-            cursor: pointer;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-            animation: orb-float 8s ease-in-out infinite;
-        }
+.glass-dark {
+  background: rgba(10, 10, 10, 0.4); /* Slightly lighter glass for depth */
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-        #universe-orb.clicked {
-            transform: scale(0);
-            opacity: 0;
-        }
-        
-        .orb-glow {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(106, 27, 154, 0.5) 0%, rgba(2,0,36,1) 70%);
-            box-shadow: inset 0 0 40px rgba(236, 179, 255, 0.4), 0 0 60px rgba(171, 71, 188, 0.7);
-            animation: orb-pulse 4s infinite ease-in-out;
-        }
+/* Text gradient for the new theme */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
-        .orb-core {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            border-radius: 50%;
-            transform-style: preserve-3d;
-            animation: rotate-3d 30s linear infinite;
-        }
+/* Glow effect for the new theme */
+.glow-text {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
 
-        .orb-layer {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border-radius: 50%;
-            background-size: 200% 200%;
-        }
+/* Hover lift with updated shadow */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        .nebula-1 {
-            background-image: radial-gradient(circle at 20% 30%, hsla(260, 100%, 75%, 0.7) 0%, transparent 40%),
-                              radial-gradient(circle at 80% 70%, hsla(190, 100%, 75%, 0.7) 0%, transparent 40%);
-            animation: move-bg 15s linear infinite alternate, spin-layer 20s linear infinite;
-            transform: translateZ(-20px);
-            filter: blur(12px);
-            opacity: 0.8;
-        }
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1); /* Subtle white glow shadow */
+}
 
-        .nebula-2 {
-            background-image: radial-gradient(circle at 50% 50%, hsla(330, 80%, 70%, 0.6) 0%, transparent 30%),
-                              radial-gradient(circle at 10% 80%, hsla(250, 90%, 80%, 0.6) 0%, transparent 40%);
-            animation: move-bg 20s linear infinite alternate-reverse, spin-layer 25s linear infinite reverse;
-            transform: translateZ(10px);
-            filter: blur(15px);
-            opacity: 0.7;
-        }
+/* Smooth reveal animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-        .stars {
-             background-image: 
-                radial-gradient(1px 1px at 10% 20%, white, transparent 80%),
-                radial-gradient(1.5px 1.5px at 80% 30%, white, transparent 80%),
-                radial-gradient(1px 1px at 45% 85%, white, transparent 80%),
-                radial-gradient(2px 2px at 70% 60%, white, transparent 80%),
-                radial-gradient(1px 1px at 25% 65%, white, transparent 80%);
-            background-repeat: no-repeat;
-            animation: spin-layer 40s linear infinite;
-            transform: translateZ(30px) scale(0.95);
-        }
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
 
-        #orb-text {
-            position: relative;
-            z-index: 10;
-            color: white;
-            font-size: 1.1rem;
-            font-weight: 500;
-            text-align: center;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
-            transform: translateZ(50px);
-            pointer-events: none;
-        }
-        
-        /* Keyframes for the new orb */
-        @keyframes rotate-3d {
-            from { transform: rotateY(0deg) rotateX(10deg); }
-            to { transform: rotateY(360deg) rotateX(10deg); }
-        }
+/* Typing animation with white cursor */
+.typing-cursor::after {
+  content: "|";
+  animation: blink 1s infinite;
+  color: #ffffff;
+  font-weight: 300;
+}
 
-        @keyframes spin-layer {
-            from { transform: rotateZ(0deg) rotateY(var(--ry, 0deg)); }
-            to { transform: rotateZ(360deg) rotateY(var(--ry, 0deg)); }
-        }
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
 
-        @keyframes move-bg {
-            from { background-position: 0% 0%; }
-            to { background-position: 100% 100%; }
-        }
-        
-        @keyframes orb-float {
-             0%, 100% { transform: translateY(0px) rotateX(10deg); }
-             50% { transform: translateY(-20px) rotateX(-10deg); }
-        }
+/* Particle canvas */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
 
-        @keyframes orb-pulse {
-            0% { box-shadow: inset 0 0 40px rgba(236, 179, 255, 0.4), 0 0 60px rgba(171, 71, 188, 0.7); opacity: 0.9; }
-            50% { box-shadow: inset 0 0 50px rgba(236, 179, 255, 0.6), 0 0 80px rgba(171, 71, 188, 1); opacity: 1; }
-            100% { box-shadow: inset 0 0 40px rgba(236, 179, 255, 0.4), 0 0 60px rgba(171, 71, 188, 0.7); opacity: 0.9; }
-        }
+/* Custom scrollbar for the new theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ffffff, #888888);
+  border-radius: 10px;
+}
+
+/* Navigation dots for the new theme */
+.nav-dot-container {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+body.content-revealed .nav-dot-container {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.nav-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+/* Magnetic button effect */
+.magnetic-btn {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Floating animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Stagger animation */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+/* --- NEW UNIVERSE ORB STYLES --- */
+#universe-orb-container {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+#universe-orb {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  animation: orb-float 8s ease-in-out infinite;
+}
+
+#universe-orb.clicked {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.orb-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(106, 27, 154, 0.5) 0%,
+    rgba(2, 0, 36, 1) 70%
+  );
+  box-shadow: inset 0 0 40px rgba(236, 179, 255, 0.4),
+    0 0 60px rgba(171, 71, 188, 0.7);
+  animation: orb-pulse 4s infinite ease-in-out;
+}
+
+.orb-core {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  animation: rotate-3d 30s linear infinite;
+}
+
+.orb-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: 200% 200%;
+}
+
+.nebula-1 {
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      hsla(260, 100%, 75%, 0.7) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      hsla(190, 100%, 75%, 0.7) 0%,
+      transparent 40%
+    );
+  animation: move-bg 15s linear infinite alternate,
+    spin-layer 20s linear infinite;
+  transform: translateZ(-20px);
+  filter: blur(12px);
+  opacity: 0.8;
+}
+
+.nebula-2 {
+  background-image: radial-gradient(
+      circle at 50% 50%,
+      hsla(330, 80%, 70%, 0.6) 0%,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      hsla(250, 90%, 80%, 0.6) 0%,
+      transparent 40%
+    );
+  animation: move-bg 20s linear infinite alternate-reverse,
+    spin-layer 25s linear infinite reverse;
+  transform: translateZ(10px);
+  filter: blur(15px);
+  opacity: 0.7;
+}
+
+.stars {
+  background-image: radial-gradient(1px 1px at 10% 20%, white, transparent 80%),
+    radial-gradient(1.5px 1.5px at 80% 30%, white, transparent 80%),
+    radial-gradient(1px 1px at 45% 85%, white, transparent 80%),
+    radial-gradient(2px 2px at 70% 60%, white, transparent 80%),
+    radial-gradient(1px 1px at 25% 65%, white, transparent 80%);
+  background-repeat: no-repeat;
+  animation: spin-layer 40s linear infinite;
+  transform: translateZ(30px) scale(0.95);
+}
+
+#orb-text {
+  position: relative;
+  z-index: 10;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+  transform: translateZ(50px);
+  pointer-events: none;
+}
+
+/* Keyframes for the new orb */
+@keyframes rotate-3d {
+  from {
+    transform: rotateY(0deg) rotateX(10deg);
+  }
+  to {
+    transform: rotateY(360deg) rotateX(10deg);
+  }
+}
+
+@keyframes spin-layer {
+  from {
+    transform: rotateZ(0deg) rotateY(var(--ry, 0deg));
+  }
+  to {
+    transform: rotateZ(360deg) rotateY(var(--ry, 0deg));
+  }
+}
+
+@keyframes move-bg {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes orb-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotateX(10deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(-10deg);
+  }
+}
+
+@keyframes orb-pulse {
+  0% {
+    box-shadow: inset 0 0 40px rgba(236, 179, 255, 0.4),
+      0 0 60px rgba(171, 71, 188, 0.7);
+    opacity: 0.9;
+  }
+  50% {
+    box-shadow: inset 0 0 50px rgba(236, 179, 255, 0.6),
+      0 0 80px rgba(171, 71, 188, 1);
+    opacity: 1;
+  }
+  100% {
+    box-shadow: inset 0 0 40px rgba(236, 179, 255, 0.4),
+      0 0 60px rgba(171, 71, 188, 0.7);
+    opacity: 0.9;
+  }
+}
