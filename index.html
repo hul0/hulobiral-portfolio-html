@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- YOUR NAME | YOUR ROLE -->
     <title>Alex Doe | Software Engineer</title>
+    <!-- A brief description of you and your work -->
     <meta name="description" content="Professional portfolio of Alex Doe - Software Engineer specializing in innovative digital solutions">
     
     <!-- Tailwind CSS -->
@@ -26,8 +28,41 @@
             background: #000000; /* Total black background */
             color: #ffffff;
             overflow-x: hidden;
+            /* Hide the default cursor */
+            cursor: none;
+        }
+
+        /* Custom Cursor Styling */
+        .cursor, .cursor-follower {
+            position: fixed;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            border-radius: 50%;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+        }
+
+        .cursor-follower {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.15s ease-out, width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
         }
         
+        .cursor-grow {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: transparent;
+        }
+
         .font-display {
             font-family: 'Playfair Display', serif;
         }
@@ -161,6 +196,10 @@
     </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
     <!-- Particle Background -->
     <canvas id="particles-canvas"></canvas>
     
@@ -168,6 +207,7 @@
     <nav class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-white/5">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="flex items-center justify-between h-20">
+                <!-- YOUR INITIALS -->
                 <a href="#" class="text-2xl font-bold text-gradient">AD</a>
                 
                 <div class="hidden md:flex items-center space-x-8">
@@ -207,6 +247,7 @@
         <div class="nav-dot" data-section="about"></div>
         <div class="nav-dot" data-section="showcase"></div>
         <div class="nav-dot" data-section="work"></div>
+        <div class="nav-dot" data-section="education"></div>
         <div class="nav-dot" data-section="contact"></div>
     </div>
     
@@ -217,11 +258,14 @@
                 <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-8 animate-fadeInUp">Welcome to my universe</p>
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp stagger-1">
                     <span class="font-display font-normal">I'm</span> 
+                    <!-- YOUR NAME -->
                     <span class="text-gradient">Alex Doe</span>
                 </h1>
                 <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fadeInUp stagger-2">
+                    <!-- YOUR ROLE (the script at the bottom controls the typing animation) -->
                     <span class="typing-cursor">Software Engineer</span>
                 </p>
+                <!-- YOUR CATCHPHRASE or MOTTO -->
                 <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 animate-fadeInUp stagger-3">
                     Crafting elegant solutions to complex problems
                 </p>
@@ -230,6 +274,7 @@
                     <a href="#work" class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200">
                         Explore My Work
                     </a>
+                    <!-- LINK TO YOUR RESUME FILE -->
                     <button class="px-8 py-4 glass border border-white/10 text-white rounded-full hover-lift font-medium">
                         Download Resume
                     </button>
@@ -254,6 +299,7 @@
                     <h2 class="text-4xl md:text-5xl font-bold mb-6">
                         Passionate about <span class="text-gradient">innovation</span>
                     </h2>
+                    <!-- A BIT ABOUT YOURSELF -->
                     <p class="text-gray-300 mb-6 leading-relaxed">
                         A dedicated engineer with a vision for the future of technology.
                     </p>
@@ -261,6 +307,7 @@
                         Specializing in creating seamless digital experiences that bridge the gap between functionality and aesthetics.
                     </p>
                     
+                    <!-- YOUR STATS (e.g., projects, experience, clients) -->
                     <div class="grid grid-cols-2 gap-6 mb-8">
                         <div class="glass p-4 rounded-lg">
                             <p class="text-3xl font-bold text-gradient mb-1">50+</p>
@@ -272,22 +319,30 @@
                         </div>
                     </div>
                     
+                    <!-- YOUR SOCIAL MEDIA LINKS -->
                     <div class="flex gap-4">
-                        <div class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
+                        <a href="#" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </div>
-                        <div class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
+                        </a>
+                        <a href="#" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </div>
-                        <div class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
+                        </a>
+                        <a href="#" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
-                        </div>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
+                        </a>
+                         <a href="#" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12c6.628 0 12-5.373 12-12S18.628 0 12 0zm6.683 14.165c-2.45-2.791-4.225-3.832-4.225-3.832s2.175 4.975 1.133 7.05c-.917 1.833-3.05 1.75-3.05 1.75s-1.125.042-2.042-.958c-.916-1-.958-2.042-.958-2.042s.75-2.708 2.833-4.583c2.083-1.875 3.583-2.917 3.583-2.917s-3.208-1.167-4.833.5c-1.625 1.667-1.833 3.417-1.833 3.417s-.042 1.25.917 2.167c.958.916 2.125.875 2.125.875s2.75.292 3.583-2.083c.834-2.375-.292-6.25-.292-6.25s3.208 1.083 4.583 4.5c.875 2.25.333 3.917.333 3.917s-1.042.875-2.5-1.292z"/></svg>
+                        </a>
                     </div>
                 </div>
                 
                 <div class="order-1 lg:order-2 relative">
                     <div class="relative floating">
                         <div class="absolute inset-0 bg-white rounded-2xl blur-3xl opacity-10"></div>
+                        <!-- YOUR PROFILE PICTURE -->
                         <img src="https://placehold.co/600x600/000000/FFFFFF?text=AD" alt="Profile" class="relative rounded-2xl w-full max-w-md mx-auto glass">
                     </div>
                 </div>
@@ -309,6 +364,7 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- LINK TO YOUR SKILLS PAGE OR SECTION -->
                 <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -319,6 +375,7 @@
                     <p class="text-gray-400 text-sm">Technical expertise</p>
                 </a>
                 
+                <!-- LINK TO YOUR PROJECTS PAGE OR SECTION -->
                 <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -329,6 +386,7 @@
                     <p class="text-gray-400 text-sm">Portfolio showcase</p>
                 </a>
                 
+                <!-- LINK TO YOUR TECH STACK PAGE OR SECTION -->
                 <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -339,6 +397,7 @@
                     <p class="text-gray-400 text-sm">Tools & frameworks</p>
                 </a>
                 
+                <!-- LINK TO YOUR BLOG PAGE OR SECTION -->
                 <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -362,27 +421,66 @@
                 </h2>
             </div>
             
+            <!-- DUPLICATE THIS BLOCK FOR EACH JOB EXPERIENCE -->
             <div class="max-w-3xl mx-auto space-y-8">
                 <div class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                         <div>
+                            <!-- YOUR JOB TITLE -->
                             <h3 class="text-2xl font-semibold mb-1">Software Engineer</h3>
+                            <!-- COMPANY NAME -->
                             <p class="text-gray-400">Tech Company</p>
                         </div>
+                        <!-- DATES OF EMPLOYMENT -->
                         <span class="text-sm text-gray-500 mt-2 md:mt-0">2024 - Present</span>
                     </div>
+                    <!-- BRIEF DESCRIPTION OF YOUR ROLE/ACHIEVEMENTS -->
                     <p class="text-gray-300">Building scalable solutions</p>
                 </div>
                 
                 <div class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                         <div>
+                            <!-- YOUR JOB TITLE -->
                             <h3 class="text-2xl font-semibold mb-1">Frontend Developer</h3>
+                            <!-- COMPANY NAME -->
                             <p class="text-gray-400">Digital Agency</p>
                         </div>
+                        <!-- DATES OF EMPLOYMENT -->
                         <span class="text-sm text-gray-500 mt-2 md:mt-0">2023 - 2024</span>
                     </div>
+                    <!-- BRIEF DESCRIPTION OF YOUR ROLE/ACHIEVEMENTS -->
                     <p class="text-gray-300">Crafting user experiences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="min-h-screen flex items-center relative z-10 py-20">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Academics</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    Educational <span class="text-gradient">Background</span>
+                </h2>
+            </div>
+            
+            <!-- DUPLICATE THIS BLOCK FOR EACH DEGREE -->
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <!-- YOUR DEGREE -->
+                            <h3 class="text-2xl font-semibold mb-1">Bachelor of Science in Computer Science</h3>
+                            <!-- UNIVERSITY NAME -->
+                            <p class="text-gray-400">University of Technology</p>
+                        </div>
+                        <!-- DATES OF ATTENDANCE -->
+                        <span class="text-sm text-gray-500 mt-2 md:mt-0">2019 - 2023</span>
+                    </div>
+                    <!-- BRIEF DESCRIPTION (e.g., specialization, thesis, honors) -->
+                    <p class="text-gray-300">Specialized in Artificial Intelligence and Machine Learning.</p>
                 </div>
             </div>
         </div>
@@ -401,19 +499,24 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <!-- YOUR EMAIL ADDRESS -->
                     <a href="mailto:hello@alexdoe.com" class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200">
                         Send Email
                     </a>
+                    <!-- LINK TO YOUR CALENDLY OR SCHEDULING TOOL -->
                     <a href="#" class="px-8 py-4 glass border border-white/10 text-white rounded-full hover-lift font-medium">
                         Schedule Call
                     </a>
                 </div>
                 
+                <!-- YOUR SOCIAL MEDIA LINKS -->
                 <div class="flex justify-center space-x-6">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">Dribbble</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Behance</a>
                 </div>
             </div>
         </div>
@@ -423,13 +526,51 @@
     <footer class="relative z-10 glass-dark border-t border-white/5 py-8">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- YOUR NAME -->
                 <p class="text-gray-400 text-sm">© 2025 Alex Doe. Crafted with passion.</p>
+                <!-- YOUR NAME or HANDLE -->
                 <p class="text-gray-400 text-sm mt-4 md:mt-0">Design & Code by Alex</p>
             </div>
         </div>
     </footer>
     
     <script>
+        // Custom cursor "Comet Trail" effect
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        const hoverables = document.querySelectorAll('a, button, .cursor-pointer');
+
+        let mouseX = 0, mouseY = 0;
+        let followerX = 0, followerY = 0;
+        
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            // Update main cursor position
+            cursor.style.left = `${mouseX}px`;
+            cursor.style.top = `${mouseY}px`;
+
+            // Update follower position with a delay (lerp)
+            const dx = mouseX - followerX;
+            const dy = mouseY - followerY;
+            followerX += dx * 0.1; // Adjust the 0.1 value for more/less lag
+            followerY += dy * 0.1;
+            follower.style.left = `${followerX}px`;
+            follower.style.top = `${followerY}px`;
+            
+            requestAnimationFrame(animateCursor);
+        }
+        
+        animateCursor();
+
+        hoverables.forEach(el => {
+            el.addEventListener('mouseenter', () => follower.classList.add('cursor-grow'));
+            el.addEventListener('mouseleave', () => follower.classList.remove('cursor-grow'));
+        });
+
         // Particle animation
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
@@ -481,7 +622,7 @@
             }
         }
         
-        function animate() {
+        function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
             particles.forEach(particle => {
@@ -504,11 +645,11 @@
                 });
             });
             
-            requestAnimationFrame(animate);
+            requestAnimationFrame(animateParticles);
         }
         
         init();
-        animate();
+        animateParticles();
         
         // Window resize
         window.addEventListener('resize', () => {
@@ -568,6 +709,7 @@
         
         // Typing animation
         const typingText = document.querySelector('.typing-cursor');
+        // EDIT these strings for the typing animation in the hero section
         const texts = ['Software Engineer', 'Problem Solver', 'Creative Thinker', 'Tech Enthusiast'];
         let textIndex = 0;
         let charIndex = 0;
@@ -619,3 +761,4 @@
     </script>
 </body>
 </html>
+
