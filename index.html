@@ -1,300 +1,538 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alex Doe | Software Engineer</title>
-    <meta name="description" content="Professional portfolio of Alex Doe - Software Engineer specializing in innovative digital solutions">
-    
+    <meta
+      name="description"
+      content="Professional portfolio of Alex Doe - Software Engineer specializing in innovative digital solutions"
+    />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    
-   <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Particle Background -->
     <canvas id="particles-canvas"></canvas>
-    
+
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-white/5">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="flex items-center justify-between h-20">
-                <a href="#" class="text-2xl font-bold text-gradient">AD</a>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a>
-                    <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
-                    <a href="#work" class="text-gray-300 hover:text-white transition-colors duration-300">Work</a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
-                </div>
-                
-                <a href="#contact" class="hidden md:block px-6 py-2 bg-white text-black rounded-full hover-lift font-medium transition-colors duration-300 hover:bg-gray-200 magnetic-btn">
-                    Let's Talk
-                </a>
-                
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-white/5"
+    >
+      <div class="container mx-auto px-6 lg:px-12">
+        <div class="flex items-center justify-between h-20">
+          <a href="#" class="text-2xl font-bold text-gradient">AD</a>
+
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="#home"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              >About</a
+            >
+            <a
+              href="#work"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              >Work</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-300 hover:text-white transition-colors duration-300"
+              >Contact</a
+            >
+          </div>
+
+          <a
+            href="#contact"
+            class="hidden md:block px-6 py-2 bg-white text-black rounded-full hover-lift font-medium transition-colors duration-300 hover:bg-gray-200 magnetic-btn"
+          >
+            Let's Talk
+          </a>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-white">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
         </div>
-        
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/5">
-            <div class="px-6 py-4 space-y-3">
-                <a href="#home" class="mobile-menu-link block text-gray-300 hover:text-white transition-colors">Home</a>
-                <a href="#about" class="mobile-menu-link block text-gray-300 hover:text-white transition-colors">About</a>
-                <a href="#work" class="mobile-menu-link block text-gray-300 hover:text-white transition-colors">Work</a>
-                <a href="#contact" class="mobile-menu-link block text-gray-300 hover:text-white transition-colors">Contact</a>
-            </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden glass-dark border-t border-white/5"
+      >
+        <div class="px-6 py-4 space-y-3">
+          <a
+            href="#home"
+            class="mobile-menu-link block text-gray-300 hover:text-white transition-colors"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="mobile-menu-link block text-gray-300 hover:text-white transition-colors"
+            >About</a
+          >
+          <a
+            href="#work"
+            class="mobile-menu-link block text-gray-300 hover:text-white transition-colors"
+            >Work</a
+          >
+          <a
+            href="#contact"
+            class="mobile-menu-link block text-gray-300 hover:text-white transition-colors"
+            >Contact</a
+          >
         </div>
+      </div>
     </nav>
-    
+
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative z-10">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="max-w-4xl mx-auto text-center">
-                <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-8 animate-fadeInUp">Welcome to my universe</p>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp stagger-1">
-                    <span class="font-display font-normal">I'm</span> 
-                    <span class="text-gradient">Alex Doe</span>
-                </h1>
-                <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fadeInUp stagger-2">
-                    <span class="typing-cursor">Software Engineer</span>
-                </p>
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 animate-fadeInUp stagger-3">
-                    Crafting elegant solutions to complex problems
-                </p>
-                
-                <!-- Buttons are back! Initially hidden, revealed after orb click -->
-                <div id="hero-buttons" class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#work" class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200">
-                        Explore My Work
-                    </a>
-                    <a href="#" class="px-8 py-4 glass border border-white/10 text-white rounded-full hover-lift font-medium">
-                        Download Resume
-                    </a>
-                </div>
-            </div>
-            
-             <!-- Universe Orb Container -->
-            <div id="universe-orb-container">
-                <div id="universe-orb">
-                    <div class="orb-glow"></div>
-                    <div class="orb-core">
-                        <div class="orb-layer nebula-1"></div>
-                        <div class="orb-layer nebula-2"></div>
-                        <div class="orb-layer stars"></div>
-                    </div>
-                    <span id="orb-text">Enter The <br> Universe</span>
-                </div>
-            </div>
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center relative z-10"
+    >
+      <div class="container mx-auto px-6 lg:px-12">
+        <div class="max-w-4xl mx-auto text-center">
+          <p
+            class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-8 animate-fadeInUp"
+          >
+            Welcome to my universe
+          </p>
+          <h1
+            class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp stagger-1"
+          >
+            <span class="font-display font-normal">I'm</span>
+            <span class="text-gradient">Alex Doe</span>
+          </h1>
+          <p
+            class="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fadeInUp stagger-2"
+          >
+            <span class="typing-cursor">Software Engineer</span>
+          </p>
+          <p
+            class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 animate-fadeInUp stagger-3"
+          >
+            Crafting elegant solutions to complex problems
+          </p>
+
+          <!-- Buttons are back! Initially hidden, revealed after orb click -->
+          <div
+            id="hero-buttons"
+            class="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a
+              href="#work"
+              class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200"
+            >
+              Explore My Work
+            </a>
+            <a
+              href="#"
+              class="px-8 py-4 glass border border-white/10 text-white rounded-full hover-lift font-medium"
+            >
+              Download Resume
+            </a>
+          </div>
         </div>
+
+        <!-- Universe Orb Container -->
+        <div id="universe-orb-container">
+          <div id="universe-orb">
+            <div class="orb-glow"></div>
+            <div class="orb-core">
+              <div class="orb-layer nebula-1"></div>
+              <div class="orb-layer nebula-2"></div>
+              <div class="orb-layer stars"></div>
+            </div>
+            <span id="orb-text"
+              >Enter The <br />
+              Universe</span
+            >
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- This wrapper will be revealed on orb click -->
     <div id="main-content">
-        <!-- Navigation Dots -->
-        <div class="nav-dot-container fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col space-y-4">
-            <div class="nav-dot active" data-section="home"></div>
-            <div class="nav-dot" data-section="about"></div>
-            <div class="nav-dot" data-section="showcase"></div>
-            <div class="nav-dot" data-section="work"></div>
-            <div class="nav-dot" data-section="contact"></div>
+      <!-- Navigation Dots -->
+      <div
+        class="nav-dot-container fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col space-y-4"
+      >
+        <div class="nav-dot active" data-section="home"></div>
+        <div class="nav-dot" data-section="about"></div>
+        <div class="nav-dot" data-section="showcase"></div>
+        <div class="nav-dot" data-section="work"></div>
+        <div class="nav-dot" data-section="contact"></div>
+      </div>
+
+      <!-- About Section -->
+      <section
+        id="about"
+        class="min-h-screen flex items-center relative z-10 py-20"
+      >
+        <div class="container mx-auto px-6 lg:px-12">
+          <div
+            class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto"
+          >
+            <div class="order-2 lg:order-1">
+              <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
+                About Me
+              </p>
+              <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Passionate about <span class="text-gradient">innovation</span>
+              </h2>
+              <p class="text-gray-300 mb-6 leading-relaxed">
+                A dedicated engineer with a vision for the future of technology.
+              </p>
+              <p class="text-gray-400 mb-8 leading-relaxed">
+                Specializing in creating seamless digital experiences that
+                bridge the gap between functionality and aesthetics.
+              </p>
+
+              <div class="grid grid-cols-2 gap-6 mb-8">
+                <div class="glass p-4 rounded-lg">
+                  <p class="text-3xl font-bold text-gradient mb-1">50+</p>
+                  <p class="text-sm text-gray-400">Projects Completed</p>
+                </div>
+                <div class="glass p-4 rounded-lg">
+                  <p class="text-3xl font-bold text-gradient mb-1">3+</p>
+                  <p class="text-sm text-gray-400">Years Experience</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="order-1 lg:order-2 relative">
+              <div class="relative floating">
+                <div
+                  class="absolute inset-0 bg-white rounded-2xl blur-3xl opacity-10"
+                ></div>
+                <img
+                  src="https://placehold.co/600x600/000000/FFFFFF?text=AD"
+                  alt="Profile"
+                  class="relative rounded-2xl w-full max-w-md mx-auto glass"
+                />
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <!-- About Section -->
-        <section id="about" class="min-h-screen flex items-center relative z-10 py-20">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                    <div class="order-2 lg:order-1">
-                        <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">About Me</p>
-                        <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                            Passionate about <span class="text-gradient">innovation</span>
-                        </h2>
-                        <p class="text-gray-300 mb-6 leading-relaxed">
-                            A dedicated engineer with a vision for the future of technology.
-                        </p>
-                        <p class="text-gray-400 mb-8 leading-relaxed">
-                            Specializing in creating seamless digital experiences that bridge the gap between functionality and aesthetics.
-                        </p>
-                        
-                        <div class="grid grid-cols-2 gap-6 mb-8">
-                            <div class="glass p-4 rounded-lg">
-                                <p class="text-3xl font-bold text-gradient mb-1">50+</p>
-                                <p class="text-sm text-gray-400">Projects Completed</p>
-                            </div>
-                            <div class="glass p-4 rounded-lg">
-                                <p class="text-3xl font-bold text-gradient mb-1">3+</p>
-                                <p class="text-sm text-gray-400">Years Experience</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-4">
-                             <a href="https://github.com" target="_blank" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            </a>
-                             <a href="https://linkedin.com" target="_blank" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                            </a>
-                            <a href="https://twitter.com" target="_blank" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="order-1 lg:order-2 relative">
-                        <div class="relative floating">
-                            <div class="absolute inset-0 bg-white rounded-2xl blur-3xl opacity-10"></div>
-                            <img src="https://placehold.co/600x600/000000/FFFFFF?text=AD" alt="Profile" class="relative rounded-2xl w-full max-w-md mx-auto glass">
-                        </div>
-                    </div>
+      <!-- Showcase Section -->
+      <section
+        id="showcase"
+        class="min-h-screen flex items-center relative z-10 py-20"
+      >
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="text-center mb-16">
+            <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
+              Explore
+            </p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">
+              My <span class="text-gradient">Digital Universe</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+              Dive deeper into my expertise and creative work
+            </p>
+          </div>
+
+          <div
+            class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+          >
+            <a
+              href="#"
+              class="group glass rounded-2xl p-8 hover-lift cursor-pointer"
+            >
+              <div
+                class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Skills</h3>
+              <p class="text-gray-400 text-sm">Technical expertise</p>
+            </a>
+
+            <a
+              href="#work"
+              class="group glass rounded-2xl p-8 hover-lift cursor-pointer"
+            >
+              <div
+                class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Projects</h3>
+              <p class="text-gray-400 text-sm">Portfolio showcase</p>
+            </a>
+
+            <a
+              href="#"
+              class="group glass rounded-2xl p-8 hover-lift cursor-pointer"
+            >
+              <div
+                class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Tech Stack</h3>
+              <p class="text-gray-400 text-sm">Tools & frameworks</p>
+            </a>
+
+            <a
+              href="#"
+              class="group glass rounded-2xl p-8 hover-lift cursor-pointer"
+            >
+              <div
+                class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Blog</h3>
+              <p class="text-gray-400 text-sm">Thoughts & insights</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work Experience Section -->
+      <section
+        id="work"
+        class="min-h-screen flex items-center relative z-10 py-20"
+      >
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="text-center mb-16">
+            <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
+              Experience
+            </p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">
+              Professional <span class="text-gradient">Journey</span>
+            </h2>
+          </div>
+
+          <div class="max-w-3xl mx-auto space-y-8">
+            <div
+              class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-2xl font-semibold mb-1">Software Engineer</h3>
+                  <p class="text-gray-400">Tech Company</p>
                 </div>
+                <span class="text-sm text-gray-500 mt-2 md:mt-0"
+                  >2024 - Present</span
+                >
+              </div>
+              <p class="text-gray-300">Building scalable solutions</p>
             </div>
-        </section>
-        
-        <!-- Showcase Section -->
-        <section id="showcase" class="min-h-screen flex items-center relative z-10 py-20">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="text-center mb-16">
-                    <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Explore</p>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                        My <span class="text-gradient">Digital Universe</span>
-                    </h2>
-                    <p class="text-gray-400 max-w-2xl mx-auto">
-                        Dive deeper into my expertise and creative work
-                    </p>
+
+            <div
+              class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between mb-4"
+              >
+                <div>
+                  <h3 class="text-2xl font-semibold mb-1">
+                    Frontend Developer
+                  </h3>
+                  <p class="text-gray-400">Digital Agency</p>
                 </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                    <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
-                        <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Skills</h3>
-                        <p class="text-gray-400 text-sm">Technical expertise</p>
-                    </a>
-                    
-                    <a href="#work" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
-                        <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Projects</h3>
-                        <p class="text-gray-400 text-sm">Portfolio showcase</p>
-                    </a>
-                    
-                    <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
-                        <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Tech Stack</h3>
-                        <p class="text-gray-400 text-sm">Tools & frameworks</p>
-                    </a>
-                    
-                    <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
-                        <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">Blog</h3>
-                        <p class="text-gray-400 text-sm">Thoughts & insights</p>
-                    </a>
-                </div>
+                <span class="text-sm text-gray-500 mt-2 md:mt-0"
+                  >2023 - 2024</span
+                >
+              </div>
+              <p class="text-gray-300">Crafting user experiences</p>
             </div>
-        </section>
-        
-        <!-- Work Experience Section -->
-        <section id="work" class="min-h-screen flex items-center relative z-10 py-20">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="text-center mb-16">
-                    <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Experience</p>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                        Professional <span class="text-gradient">Journey</span>
-                    </h2>
-                </div>
-                
-                <div class="max-w-3xl mx-auto space-y-8">
-                    <div class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                            <div>
-                                <h3 class="text-2xl font-semibold mb-1">Software Engineer</h3>
-                                <p class="text-gray-400">Tech Company</p>
-                            </div>
-                            <span class="text-sm text-gray-500 mt-2 md:mt-0">2024 - Present</span>
-                        </div>
-                        <p class="text-gray-300">Building scalable solutions</p>
-                    </div>
-                    
-                    <div class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                            <div>
-                                <h3 class="text-2xl font-semibold mb-1">Frontend Developer</h3>
-                                <p class="text-gray-400">Digital Agency</p>
-                            </div>
-                            <span class="text-sm text-gray-500 mt-2 md:mt-0">2023 - 2024</span>
-                        </div>
-                        <p class="text-gray-300">Crafting user experiences</p>
-                    </div>
-                </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section
+        id="contact"
+        class="min-h-screen flex items-center relative z-10 py-20"
+      >
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="max-w-4xl mx-auto text-center">
+            <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
+              Get in Touch
+            </p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+              Let's Create <span class="text-gradient">Something Amazing</span>
+            </h2>
+            <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
+              Ready to bring your ideas to life? Let's connect and explore the
+              possibilities.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <a
+                href="mailto:hello@alexdoe.com"
+                class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200"
+              >
+                Send Email
+              </a>
+              <a
+                href="https://cal.com/"
+                target="_blank"
+                class="px-8 py-4 glass border border-white/10 text-white rounded-full hover-lift font-medium"
+              >
+                Schedule Call
+              </a>
             </div>
-        </section>
-        
-        <!-- Contact Section -->
-        <section id="contact" class="min-h-screen flex items-center relative z-10 py-20">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="max-w-4xl mx-auto text-center">
-                    <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Get in Touch</p>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                        Let's Create <span class="text-gradient">Something Amazing</span>
-                    </h2>
-                    <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
-                        Ready to bring your ideas to life? Let's connect and explore the possibilities.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                        <a href="mailto:hello@alexdoe.com" class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200">
-                            Send Email
-                        </a>
-                        <a href="https://cal.com/" target="_blank" class="px-8 py-4 glass border border-white/10 text-white rounded-full hover-lift font-medium">
-                            Schedule Call
-                        </a>
-                    </div>
-                    
-                    <div class="flex justify-center space-x-6">
-                        <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
-                        <a href="https://github.com" target="_blank" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
-                        <a href="https://twitter.com" target="_blank" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
-                    </div>
-                </div>
+
+            <div class="flex justify-center space-x-6">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                class="text-gray-400 hover:text-white transition-colors"
+                >LinkedIn</a
+              >
+              <a
+                href="https://github.com"
+                target="_blank"
+                class="text-gray-400 hover:text-white transition-colors"
+                >GitHub</a
+              >
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Twitter</a
+              >
             </div>
-        </section>
-        
-        <!-- Footer -->
-        <footer class="relative z-10 glass-dark border-t border-white/5 py-8">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm">© 2025 Alex Doe. Crafted with passion.</p>
-                    <p class="text-gray-400 text-sm mt-4 md:mt-0">Design & Code by Alex</p>
-                </div>
-            </div>
-        </footer>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="relative z-10 glass-dark border-t border-white/5 py-8">
+        <div class="container mx-auto px-6 lg:px-12">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm">
+              © 2025 Alex Doe. Crafted with passion.
+            </p>
+            <p class="text-gray-400 text-sm mt-4 md:mt-0">
+              Design & Code by Alex
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
-    
-    <script src="script.js"></script>
-</body>
-</html>
 
+    <script src="script.js"></script>
+  </body>
+</html>
