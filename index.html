@@ -8,7 +8,7 @@
     <!-- A brief description of you and your work -->
     <meta name="description" content="Professional portfolio of Alex Doe - Software Engineer specializing in innovative digital solutions">
     <!-- FAVICON -->
-    <link rel="icon" type="image/jpeg" href="/pfp.jpg">
+    <link rel="icon" type="image/jpeg" href="https://placehold.co/32x32/000000/FFFFFF?text=AD">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,6 +19,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
+        :root {
+            --star-twinkle-duration: 3s;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -30,8 +34,13 @@
             background: #000000; /* Total black background */
             color: #ffffff;
             overflow-x: hidden;
-            /* Hide the default cursor */
+            /* Hide the default cursor on supported devices */
             cursor: none;
+        }
+
+        /* Prevent body scroll when mobile menu is open */
+        body.menu-open {
+            overflow: hidden;
         }
 
         /* Ensure all interactive elements use the custom cursor */
@@ -48,7 +57,6 @@
             border-radius: 50%;
             z-index: 10000;
             transform: translate(-50%, -50%);
-            /* Added for the inverted color effect */
             mix-blend-mode: difference;
         }
 
@@ -61,7 +69,7 @@
         .cursor-follower {
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0); /* Start transparent */
+            background-color: rgba(255, 255, 255, 0);
             border: 1px solid white;
             transition: transform 0.15s ease-out, width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
         }
@@ -69,7 +77,6 @@
         .cursor-grow {
             width: 70px;
             height: 70px;
-            /* Fill with white for the inverted effect on hover */
             background-color: white;
             border-color: transparent;
         }
@@ -82,12 +89,14 @@
         .glass {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
         
         .glass-dark {
-            background: rgba(10, 10, 10, 0.4); /* Slightly lighter glass for depth */
+            background: rgba(10, 10, 10, 0.4);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
@@ -111,7 +120,7 @@
         
         .hover-lift:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1); /* Subtle white glow shadow */
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
         }
         
         /* Smooth reveal animation */
@@ -205,21 +214,36 @@
         .stagger-3 { animation-delay: 0.3s; }
         .stagger-4 { animation-delay: 0.4s; }
 
+        /* Mobile Menu Styling */
+        #mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #mobile-menu.open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
         /* Responsive adjustments for mobile */
         @media (max-width: 768px) {
             /* Hide custom cursor on mobile and restore default */
             .cursor, .cursor-follower {
                 display: none;
             }
-            body {
+            body, a, button, .cursor-pointer {
                 cursor: auto;
-            }
-            a, button, .cursor-pointer {
-                cursor: pointer;
-            }
-            /* Show the mobile tip */
-            #mobile-tip {
-                display: flex;
             }
         }
     </style>
@@ -237,7 +261,7 @@
         <div class="container mx-auto px-6 lg:px-12">
             <div class="flex items-center justify-between h-20">
                 <!-- YOUR INITIALS -->
-                <a href="#" class="text-2xl font-bold text-gradient">AD</a>
+                <a href="#home" class="text-2xl font-bold text-gradient">AD</a>
                 
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a>
@@ -251,25 +275,28 @@
                 </a>
                 
                 <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button id="mobile-menu-btn" class="md:hidden text-white z-[60]">
+                    <svg class="w-6 h-6 menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                     <svg class="w-6 h-6 menu-icon-close hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
             </div>
         </div>
-        
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-dark border-t border-white/5">
-            <div class="px-6 py-4 space-y-3">
-                <a href="#home" class="block text-gray-300 hover:text-white transition-colors">Home</a>
-                <a href="#about" class="block text-gray-300 hover:text-white transition-colors">About</a>
-                <a href="#work" class="block text-gray-300 hover:text-white transition-colors">Work</a>
-                <a href="#contact" class="block text-gray-300 hover:text-white transition-colors">Contact</a>
-            </div>
-        </div>
     </nav>
     
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden glass-dark z-[55]">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#home" class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors">Home</a>
+            <a href="#about" class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors">About</a>
+            <a href="#work" class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors">Work</a>
+            <a href="#contact" class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors">Contact</a>
+        </div>
+    </div>
+
     <!-- Navigation Dots -->
     <div class="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col space-y-4">
         <div class="nav-dot active" data-section="home"></div>
@@ -280,22 +307,23 @@
         <div class="nav-dot" data-section="contact"></div>
     </div>
     
+    <main>
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative z-10">
+    <section id="home" class="min-h-screen flex items-center justify-center relative z-10 py-20">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="max-w-4xl mx-auto text-center">
                 <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-8 animate-fadeInUp">Welcome to my universe</p>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp stagger-1">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp stagger-1">
                     <span class="font-display font-normal">I'm</span> 
                     <!-- YOUR NAME -->
                     <span class="text-gradient">Alex Doe</span>
                 </h1>
-                <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fadeInUp stagger-2">
+                <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fadeInUp stagger-2">
                     <!-- YOUR ROLE (the script at the bottom controls the typing animation) -->
                     <span class="typing-cursor">Software Engineer</span>
                 </p>
                 <!-- YOUR CATCHPHRASE or MOTTO -->
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 animate-fadeInUp stagger-3">
+                <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-12 animate-fadeInUp stagger-3">
                     Crafting elegant solutions to complex problems
                 </p>
                 
@@ -325,7 +353,7 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                 <div class="order-2 lg:order-1">
                     <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">About Me</p>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">
                         Passionate about <span class="text-gradient">innovation</span>
                     </h2>
                     <!-- A BIT ABOUT YOURSELF -->
@@ -339,17 +367,17 @@
                     <!-- YOUR STATS (e.g., projects, experience, clients) -->
                     <div class="grid grid-cols-2 gap-6 mb-8">
                         <div class="glass p-4 rounded-lg">
-                            <p class="text-3xl font-bold text-gradient mb-1">50+</p>
-                            <p class="text-sm text-gray-400">Projects Completed</p>
+                            <p class="text-2xl md:text-3xl font-bold text-gradient mb-1">50+</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Projects Completed</p>
                         </div>
                         <div class="glass p-4 rounded-lg">
-                            <p class="text-3xl font-bold text-gradient mb-1">3+</p>
-                            <p class="text-sm text-gray-400">Years Experience</p>
+                            <p class="text-2xl md:text-3xl font-bold text-gradient mb-1">3+</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Years Experience</p>
                         </div>
                     </div>
                     
                     <!-- YOUR SOCIAL MEDIA LINKS -->
-                    <div class="flex gap-4">
+                    <div class="flex gap-4 flex-wrap">
                         <a href="#" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                         </a>
@@ -372,7 +400,7 @@
                     <div class="relative floating">
                         <div class="absolute inset-0 bg-white rounded-2xl blur-3xl opacity-10"></div>
                         <!-- YOUR PROFILE PICTURE -->
-                        <img src="https://placehold.co/600x600/000000/FFFFFF?text=AD" alt="Profile" class="relative rounded-2xl w-full max-w-md mx-auto glass">
+                        <img src="https://placehold.co/600x600/000000/FFFFFF?text=AD" alt="Profile of Alex Doe" class="relative rounded-2xl w-full max-w-sm sm:max-w-md mx-auto glass">
                     </div>
                 </div>
             </div>
@@ -384,7 +412,7 @@
         <div class="container mx-auto px-6 lg:px-12">
             <div class="text-center mb-16">
                 <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Explore</p>
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">
                     My <span class="text-gradient">Digital Universe</span>
                 </h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
@@ -392,9 +420,9 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 <!-- LINK TO YOUR SKILLS PAGE OR SECTION -->
-                <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
+                <a href="#" class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
@@ -405,7 +433,7 @@
                 </a>
                 
                 <!-- LINK TO YOUR PROJECTS PAGE OR SECTION -->
-                <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
+                <a href="#" class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
@@ -416,7 +444,7 @@
                 </a>
                 
                 <!-- LINK TO YOUR TECH STACK PAGE OR SECTION -->
-                <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
+                <a href="#" class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
@@ -427,7 +455,7 @@
                 </a>
                 
                 <!-- LINK TO YOUR BLOG PAGE OR SECTION -->
-                <a href="#" class="group glass rounded-2xl p-8 hover-lift cursor-pointer">
+                <a href="#" class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer">
                     <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -445,18 +473,18 @@
         <div class="container mx-auto px-6 lg:px-12">
             <div class="text-center mb-16">
                 <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Experience</p>
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">
                     Professional <span class="text-gradient">Journey</span>
                 </h2>
             </div>
             
             <!-- DUPLICATE THIS BLOCK FOR EACH JOB EXPERIENCE -->
             <div class="max-w-3xl mx-auto space-y-8">
-                <div class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift">
+                <div class="glass rounded-2xl p-6 sm:p-8 border-l-4 border-white/20 hover-lift">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                         <div>
                             <!-- YOUR JOB TITLE -->
-                            <h3 class="text-2xl font-semibold mb-1">Software Engineer</h3>
+                            <h3 class="text-xl sm:text-2xl font-semibold mb-1">Software Engineer</h3>
                             <!-- COMPANY NAME -->
                             <p class="text-gray-400">Tech Company</p>
                         </div>
@@ -467,11 +495,11 @@
                     <p class="text-gray-300">Building scalable solutions</p>
                 </div>
                 
-                <div class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift">
+                <div class="glass rounded-2xl p-6 sm:p-8 border-l-4 border-white/20 hover-lift">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                         <div>
                             <!-- YOUR JOB TITLE -->
-                            <h3 class="text-2xl font-semibold mb-1">Frontend Developer</h3>
+                            <h3 class="text-xl sm:text-2xl font-semibold mb-1">Frontend Developer</h3>
                             <!-- COMPANY NAME -->
                             <p class="text-gray-400">Digital Agency</p>
                         </div>
@@ -490,18 +518,18 @@
         <div class="container mx-auto px-6 lg:px-12">
             <div class="text-center mb-16">
                 <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Academics</p>
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">
                     Educational <span class="text-gradient">Background</span>
                 </h2>
             </div>
             
             <!-- DUPLICATE THIS BLOCK FOR EACH DEGREE -->
             <div class="max-w-3xl mx-auto space-y-8">
-                <div class="glass rounded-2xl p-8 border-l-4 border-white/20 hover-lift">
+                <div class="glass rounded-2xl p-6 sm:p-8 border-l-4 border-white/20 hover-lift">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                         <div>
                             <!-- YOUR DEGREE -->
-                            <h3 class="text-2xl font-semibold mb-1">Bachelor of Science in Computer Science</h3>
+                            <h3 class="text-xl sm:text-2xl font-semibold mb-1">Bachelor of Science in Computer Science</h3>
                             <!-- UNIVERSITY NAME -->
                             <p class="text-gray-400">University of Technology</p>
                         </div>
@@ -520,7 +548,7 @@
         <div class="container mx-auto px-6 lg:px-12">
             <div class="max-w-4xl mx-auto text-center">
                 <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Get in Touch</p>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">
                     Let's Create <span class="text-gradient">Something Amazing</span>
                 </h2>
                 <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
@@ -539,7 +567,7 @@
                 </div>
                 
                 <!-- YOUR SOCIAL MEDIA LINKS -->
-                <div class="flex justify-center space-x-6">
+                <div class="flex justify-center flex-wrap gap-x-6 gap-y-3">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
@@ -550,11 +578,12 @@
             </div>
         </div>
     </section>
-    
+    </main>
+
     <!-- Footer -->
     <footer class="relative z-10 glass-dark border-t border-white/5 py-8">
         <div class="container mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center">
                 <!-- YOUR NAME -->
                 <p class="text-gray-400 text-sm">© 2025 Alex Doe. Crafted with passion.</p>
                 <!-- YOUR NAME or HANDLE -->
@@ -563,244 +592,227 @@
         </div>
     </footer>
     
-    <!-- Mobile View Tip -->
-    <div id="mobile-tip" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-[9999] glass-dark rounded-full px-4 py-2 hidden items-center gap-3 text-xs text-gray-300 backdrop-blur-md">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4v1h3a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2h3v-1H2s-2 0-2-2V4zm2-1a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2z"/>
-        </svg>
-        <span>Please use desktop mode for a better view</span>
-    </div>
-
     <script>
-        // Custom cursor "Comet Trail" effect
-        const cursor = document.querySelector('.cursor');
-        const follower = document.querySelector('.cursor-follower');
-        const hoverables = document.querySelectorAll('a, button, .cursor-pointer');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Custom cursor "Comet Trail" effect
+            const cursor = document.querySelector('.cursor');
+            const follower = document.querySelector('.cursor-follower');
+            const hoverables = document.querySelectorAll('a, button, .cursor-pointer');
 
-        let mouseX = 0, mouseY = 0;
-        let followerX = 0, followerY = 0;
-        
-        document.addEventListener('mousemove', e => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-
-        function animateCursor() {
-            // Update main cursor position
-            cursor.style.left = `${mouseX}px`;
-            cursor.style.top = `${mouseY}px`;
-
-            // Update follower position with a delay (lerp)
-            const dx = mouseX - followerX;
-            const dy = mouseY - followerY;
-            followerX += dx * 0.1; // Adjust the 0.1 value for more/less lag
-            followerY += dy * 0.1;
-            follower.style.left = `${followerX}px`;
-            follower.style.top = `${followerY}px`;
+            let mouseX = 0, mouseY = 0;
+            let followerX = 0, followerY = 0;
             
-            requestAnimationFrame(animateCursor);
-        }
-        
-        // Only run the cursor animation on non-touch devices
-        if (window.matchMedia("(pointer: fine)").matches) {
-            animateCursor();
-        }
+            // Only run cursor animations on devices that support hover
+            if (window.matchMedia("(pointer: fine)").matches) {
+                document.addEventListener('mousemove', e => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                });
 
-        hoverables.forEach(el => {
-            el.addEventListener('mouseenter', () => follower.classList.add('cursor-grow'));
-            el.addEventListener('mouseleave', () => follower.classList.remove('cursor-grow'));
-        });
+                function animateCursor() {
+                    cursor.style.left = `${mouseX}px`;
+                    cursor.style.top = `${mouseY}px`;
+                    const dx = mouseX - followerX;
+                    const dy = mouseY - followerY;
+                    followerX += dx * 0.1;
+                    followerY += dy * 0.1;
+                    follower.style.left = `${followerX}px`;
+                    follower.style.top = `${followerY}px`;
+                    requestAnimationFrame(animateCursor);
+                }
+                
+                animateCursor();
 
-        // Particle animation
-        const canvas = document.getElementById('particles-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
-        let particles = [];
-        let particleCount = window.innerWidth < 768 ? 120 : 300; // Start with the correct count
-        
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.2; // Smaller, more star-like sizes
-                this.speedX = Math.random() * 0.4 - 0.2;
-                this.speedY = Math.random() * 0.4 - 0.2;
-                this.opacity = Math.random() * 0.8 + 0.1;
-                // For twinkling effect
-                this.dOpacity = (Math.random() - 0.5) * 0.01;
+                hoverables.forEach(el => {
+                    el.addEventListener('mouseenter', () => follower.classList.add('cursor-grow'));
+                    el.addEventListener('mouseleave', () => follower.classList.remove('cursor-grow'));
+                });
+            } else {
+                // Hide custom cursor elements if not supported
+                cursor.style.display = 'none';
+                follower.style.display = 'none';
             }
+
+            // Particle animation
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
             
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                
-                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
-                
-                // Twinkle effect
-                this.opacity += this.dOpacity;
-                if (this.opacity < 0.1 || this.opacity > 0.9) {
-                    this.dOpacity *= -1;
+            let particles = [];
+
+            function setCanvasSizeAndParticles() {
+                canvas.width = window.innerWidth * window.devicePixelRatio;
+                canvas.height = window.innerHeight * window.devicePixelRatio;
+                canvas.style.width = `${window.innerWidth}px`;
+                canvas.style.height = `${window.innerHeight}px`;
+
+                // Increased particle count (300% increase from original 120/300)
+                let particleCount = window.innerWidth < 768 ? 480 : 1200;
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
                 }
             }
             
-            draw() {
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`; // White stars
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 1.5 + 0.5;
+                    this.speedX = (Math.random() - 0.5) * 0.5;
+                    this.speedY = (Math.random() - 0.5) * 0.5;
+                    this.opacity = Math.random() * 0.8 + 0.2;
+                }
+                
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    
+                    if (this.x > canvas.width + 10) this.x = -10;
+                    else if (this.x < -10) this.x = canvas.width + 10;
+                    if (this.y > canvas.height + 10) this.y = -10;
+                    else if (this.y < -10) this.y = canvas.height + 10;
+                }
+                
+                draw() {
+                    ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size * window.devicePixelRatio, 0, Math.PI * 2);
+                    ctx.fill();
+                }
             }
-        }
-        
-        function init() {
-            // Re-calculate particle count on init
-            particleCount = window.innerWidth < 768 ? 120 : 300; // 60% reduction: 300 * 0.4 = 120
-            particles = [];
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-        
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
+            let animationFrameId;
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+                
+                animationFrameId = requestAnimationFrame(animateParticles);
+            }
+            
+            // Debounce function to limit resize handler calls
+            function debounce(func, delay) {
+                let timeout;
+                return function(...args) {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(this, args), delay);
+                };
+            }
+            
+            const handleResize = debounce(() => {
+                cancelAnimationFrame(animationFrameId);
+                setCanvasSizeAndParticles();
+                animateParticles();
+            }, 250);
+
+            window.addEventListener('resize', handleResize);
+            
+            setCanvasSizeAndParticles();
+            animateParticles();
+            
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            const openIcon = document.querySelector('.menu-icon-open');
+            const closeIcon = document.querySelector('.menu-icon-close');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('open');
+                document.body.classList.toggle('menu-open');
+                openIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            }
+            
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                     if (mobileMenu.classList.contains('open')) {
+                        toggleMenu();
+                     }
+                });
             });
+
+            // Smooth scroll and nav dots
+            const sections = document.querySelectorAll('section');
+            const navDots = document.querySelectorAll('.nav-dot');
             
-            // Draw connections (constellations)
-            particles.forEach((a, index) => {
-                particles.slice(index + 1).forEach(b => {
-                    const distance = Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
-                    if (distance < 120) {
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 120)})`; // White connections
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(a.x, a.y);
-                        ctx.lineTo(b.x, b.y);
-                        ctx.stroke();
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        navDots.forEach(dot => {
+                            dot.classList.remove('active');
+                            if (dot.dataset.section === sectionId) {
+                                dot.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+            
+            navDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const sectionId = dot.dataset.section;
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
                     }
                 });
             });
             
-            requestAnimationFrame(animateParticles);
-        }
-        
-        init();
-        animateParticles();
-        
-        // Window resize
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            init(); // Re-initialize stars with the correct count
-        });
-        
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Smooth scroll and nav dots
-        const sections = document.querySelectorAll('section');
-        const navDots = document.querySelectorAll('.nav-dot');
-        
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const sectionId = entry.target.id;
-                    navDots.forEach(dot => {
-                        dot.classList.remove('active');
-                        // Handle showcase section having multiple dots
-                        const dotSection = dot.dataset.section;
-                        if (dotSection === sectionId) {
-                            dot.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, observerOptions);
-        
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-        
-        // Nav dot click
-        navDots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const sectionId = dot.dataset.section;
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    section.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-        
-        // Typing animation
-        const typingText = document.querySelector('.typing-cursor');
-        // EDIT these strings for the typing animation in the hero section
-        const texts = ['Software Engineer', 'Problem Solver', 'Creative Thinker', 'Tech Enthusiast'];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        
-        function type() {
-            const currentText = texts[textIndex];
+            // Typing animation
+            const typingText = document.querySelector('.typing-cursor');
+            const texts = ['Software Engineer', 'Problem Solver', 'Creative Thinker', 'Tech Enthusiast'];
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
             
-            if (isDeleting) {
-                typingText.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingText.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
-            
-            if (!isDeleting && charIndex === currentText.length) {
-                isDeleting = true;
-                setTimeout(type, 2000);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-                setTimeout(type, 500);
-            } else {
-                setTimeout(type, isDeleting ? 50 : 100);
-            }
-        }
-        
-        // Wait for the font to load before starting the typing animation
-        document.fonts.ready.then(() => {
-            type();
-        });
-
-        
-        // Magnetic button effect
-        document.querySelectorAll('.magnetic-btn').forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                const rect = btn.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
+            function type() {
+                const currentText = texts[textIndex];
                 
-                btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
-            });
-            
-            btn.addEventListener('mouseleave', () => {
-                btn.style.transform = 'translate(0, 0)';
+                if (isDeleting) {
+                    typingText.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingText.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                
+                if (!isDeleting && charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(type, 2000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, isDeleting ? 50 : 100);
+                }
+            }
+            type();
+
+            // Magnetic button effect
+            document.querySelectorAll('.magnetic-btn').forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+                });
+                
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0, 0)';
+                });
             });
         });
     </script>
 </body>
 </html>
-
