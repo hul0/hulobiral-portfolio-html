@@ -8,7 +8,7 @@
     <!-- A brief description of you and your work -->
     <meta name="description" content="Professional portfolio of Alex Doe - Software Engineer specializing in innovative digital solutions">
     <!-- FAVICON -->
-    <link rel="icon" type="image/jpeg" href="https://placehold.co/32x32/000000/FFFFFF?text=AD">
+    <link rel="icon" type="image/jpeg" href="/.pfp.jpg" onerror="this.onerror=null;this.href='https://placehold.co/32x32/000000/FFFFFF?text=AD';">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -106,11 +106,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-        
-        /* Glow effect for the new theme */
-        .glow-text {
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
         }
         
         /* Hover lift with updated shadow */
@@ -214,6 +209,32 @@
         .stagger-3 { animation-delay: 0.3s; }
         .stagger-4 { animation-delay: 0.4s; }
 
+        /* --- NAVBAR STYLES --- */
+        nav.scrolled {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
         /* Mobile Menu Styling */
         #mobile-menu {
             position: fixed;
@@ -235,6 +256,16 @@
             opacity: 1;
             pointer-events: auto;
         }
+        
+        #mobile-menu.open .mobile-link {
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        #mobile-menu.open .mobile-link:nth-child(1) { animation-delay: 0.2s; }
+        #mobile-menu.open .mobile-link:nth-child(2) { animation-delay: 0.3s; }
+        #mobile-menu.open .mobile-link:nth-child(3) { animation-delay: 0.4s; }
+        #mobile-menu.open .mobile-link:nth-child(4) { animation-delay: 0.5s; }
+
 
         /* Responsive adjustments for mobile */
         @media (max-width: 768px) {
@@ -257,17 +288,17 @@
     <canvas id="particles-canvas"></canvas>
     
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-white/5">
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-white/5 transition-all duration-300">
         <div class="container mx-auto px-6 lg:px-12">
             <div class="flex items-center justify-between h-20">
                 <!-- YOUR INITIALS -->
                 <a href="#home" class="text-2xl font-bold text-gradient">AD</a>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a>
-                    <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
-                    <a href="#work" class="text-gray-300 hover:text-white transition-colors duration-300">Work</a>
-                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
+                    <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+                    <a href="#work" class="nav-link text-gray-300 hover:text-white">Work</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
                 </div>
                 
                 <a href="#contact" class="hidden md:block px-6 py-2 bg-white text-black rounded-full hover-lift font-medium transition-colors duration-300 hover:bg-gray-200">
@@ -400,7 +431,7 @@
                     <div class="relative floating">
                         <div class="absolute inset-0 bg-white rounded-2xl blur-3xl opacity-10"></div>
                         <!-- YOUR PROFILE PICTURE -->
-                        <img src="https://placehold.co/600x600/000000/FFFFFF?text=AD" alt="Profile of Alex Doe" class="relative rounded-2xl w-full max-w-sm sm:max-w-md mx-auto glass">
+                        <img src="/.pfp.jpg" alt="Profile of Alex Doe" class="relative rounded-2xl w-full max-w-sm sm:max-w-md mx-auto glass" onerror="this.onerror=null;this.src='https://placehold.co/600x600/000000/FFFFFF?text=AD';">
                     </div>
                 </div>
             </div>
@@ -594,7 +625,17 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Custom cursor "Comet Trail" effect
+            // --- NAVBAR SCROLL EFFECT ---
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // --- CUSTOM CURSOR ---
             const cursor = document.querySelector('.cursor');
             const follower = document.querySelector('.cursor-follower');
             const hoverables = document.querySelectorAll('a, button, .cursor-pointer');
@@ -602,7 +643,6 @@
             let mouseX = 0, mouseY = 0;
             let followerX = 0, followerY = 0;
             
-            // Only run cursor animations on devices that support hover
             if (window.matchMedia("(pointer: fine)").matches) {
                 document.addEventListener('mousemove', e => {
                     mouseX = e.clientX;
@@ -628,12 +668,11 @@
                     el.addEventListener('mouseleave', () => follower.classList.remove('cursor-grow'));
                 });
             } else {
-                // Hide custom cursor elements if not supported
                 cursor.style.display = 'none';
                 follower.style.display = 'none';
             }
 
-            // Particle animation
+            // --- PARTICLE ANIMATION ---
             const canvas = document.getElementById('particles-canvas');
             const ctx = canvas.getContext('2d');
             
@@ -645,7 +684,6 @@
                 canvas.style.width = `${window.innerWidth}px`;
                 canvas.style.height = `${window.innerHeight}px`;
 
-                // Increased particle count (300% increase from original 120/300)
                 let particleCount = window.innerWidth < 768 ? 480 : 1200;
                 particles = [];
                 for (let i = 0; i < particleCount; i++) {
@@ -657,7 +695,8 @@
                 constructor() {
                     this.x = Math.random() * canvas.width;
                     this.y = Math.random() * canvas.height;
-                    this.size = Math.random() * 1.5 + 0.5;
+                    const isMobile = window.innerWidth < 768;
+                    this.size = isMobile ? (Math.random() * 1.0 + 0.2) : (Math.random() * 1.5 + 0.5);
                     this.speedX = (Math.random() - 0.5) * 0.5;
                     this.speedY = (Math.random() - 0.5) * 0.5;
                     this.opacity = Math.random() * 0.8 + 0.2;
@@ -684,16 +723,10 @@
             let animationFrameId;
             function animateParticles() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                particles.forEach(particle => {
-                    particle.update();
-                    particle.draw();
-                });
-                
+                particles.forEach(p => { p.update(); p.draw(); });
                 animationFrameId = requestAnimationFrame(animateParticles);
             }
             
-            // Debounce function to limit resize handler calls
             function debounce(func, delay) {
                 let timeout;
                 return function(...args) {
@@ -713,7 +746,7 @@
             setCanvasSizeAndParticles();
             animateParticles();
             
-            // Mobile menu toggle
+            // --- MOBILE MENU ---
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -736,7 +769,7 @@
                 });
             });
 
-            // Smooth scroll and nav dots
+            // --- NAV DOTS & SMOOTH SCROLL ---
             const sections = document.querySelectorAll('section');
             const navDots = document.querySelectorAll('.nav-dot');
             
@@ -761,23 +794,17 @@
             navDots.forEach(dot => {
                 dot.addEventListener('click', () => {
                     const sectionId = dot.dataset.section;
-                    const section = document.getElementById(sectionId);
-                    if (section) {
-                        section.scrollIntoView({ behavior: 'smooth' });
-                    }
+                    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
                 });
             });
             
-            // Typing animation
+            // --- TYPING ANIMATION ---
             const typingText = document.querySelector('.typing-cursor');
             const texts = ['Software Engineer', 'Problem Solver', 'Creative Thinker', 'Tech Enthusiast'];
-            let textIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
+            let textIndex = 0, charIndex = 0, isDeleting = false;
             
             function type() {
                 const currentText = texts[textIndex];
-                
                 if (isDeleting) {
                     typingText.textContent = currentText.substring(0, charIndex - 1);
                     charIndex--;
@@ -799,7 +826,7 @@
             }
             type();
 
-            // Magnetic button effect
+            // --- MAGNETIC BUTTON ---
             document.querySelectorAll('.magnetic-btn').forEach(btn => {
                 btn.addEventListener('mousemove', (e) => {
                     const rect = btn.getBoundingClientRect();
@@ -816,3 +843,4 @@
     </script>
 </body>
 </html>
+
