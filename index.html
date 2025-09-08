@@ -7,6 +7,8 @@
     <title>Alex Doe | Software Engineer</title>
     <!-- A brief description of you and your work -->
     <meta name="description" content="Professional portfolio of Alex Doe - Software Engineer specializing in innovative digital solutions">
+    <!-- FAVICON -->
+    <link rel="icon" type="image/jpeg" href="/pfp.jpg">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -202,6 +204,24 @@
         .stagger-2 { animation-delay: 0.2s; }
         .stagger-3 { animation-delay: 0.3s; }
         .stagger-4 { animation-delay: 0.4s; }
+
+        /* Responsive adjustments for mobile */
+        @media (max-width: 768px) {
+            /* Hide custom cursor on mobile and restore default */
+            .cursor, .cursor-follower {
+                display: none;
+            }
+            body {
+                cursor: auto;
+            }
+            a, button, .cursor-pointer {
+                cursor: pointer;
+            }
+            /* Show the mobile tip */
+            #mobile-tip {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
@@ -352,7 +372,7 @@
                     <div class="relative floating">
                         <div class="absolute inset-0 bg-white rounded-2xl blur-3xl opacity-10"></div>
                         <!-- YOUR PROFILE PICTURE -->
-                        <img src="./pfp.png" alt="Profile" class="relative rounded-2xl w-full max-w-md mx-auto glass">
+                        <img src="https://placehold.co/600x600/000000/FFFFFF?text=AD" alt="Profile" class="relative rounded-2xl w-full max-w-md mx-auto glass">
                     </div>
                 </div>
             </div>
@@ -543,6 +563,14 @@
         </div>
     </footer>
     
+    <!-- Mobile View Tip -->
+    <div id="mobile-tip" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-[9999] glass-dark rounded-full px-4 py-2 hidden items-center gap-3 text-xs text-gray-300 backdrop-blur-md">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4v1h3a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2h3v-1H2s-2 0-2-2V4zm2-1a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2z"/>
+        </svg>
+        <span>Please use desktop mode for a better view</span>
+    </div>
+
     <script>
         // Custom cursor "Comet Trail" effect
         const cursor = document.querySelector('.cursor');
@@ -573,7 +601,10 @@
             requestAnimationFrame(animateCursor);
         }
         
-        animateCursor();
+        // Only run the cursor animation on non-touch devices
+        if (window.matchMedia("(pointer: fine)").matches) {
+            animateCursor();
+        }
 
         hoverables.forEach(el => {
             el.addEventListener('mouseenter', () => follower.classList.add('cursor-grow'));
@@ -588,7 +619,7 @@
         canvas.height = window.innerHeight;
         
         let particles = [];
-        const particleCount = 300; // Increased star count
+        let particleCount = window.innerWidth < 768 ? 120 : 300; // Start with the correct count
         
         class Particle {
             constructor() {
@@ -625,6 +656,8 @@
         }
         
         function init() {
+            // Re-calculate particle count on init
+            particleCount = window.innerWidth < 768 ? 120 : 300; // 60% reduction: 300 * 0.4 = 120
             particles = [];
             for (let i = 0; i < particleCount; i++) {
                 particles.push(new Particle());
@@ -664,7 +697,7 @@
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            init(); // Re-initialize stars on resize
+            init(); // Re-initialize stars with the correct count
         });
         
         // Mobile menu toggle
