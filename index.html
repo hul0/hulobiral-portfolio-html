@@ -1,354 +1,721 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Rupam Ghosh (Hulo Biral) — Cybersecurity Student | Portfolio</title>
-  <meta name="description" content="Rupam Ghosh (Hulo Biral) — Cybersecurity student focused on ethical hacking, penetration testing, web application security, network defense, and CTF write-ups. Explore projects, research, bug bounties, and learning resources at hulobiral.online.">
+    <title>Rupam Ghosh (Hulo Biral) — Cybersecurity Student | Portfolio</title>
+    <meta
+      name="description"
+      content="Rupam Ghosh (Hulo Biral) — Cybersecurity student focused on ethical hacking, penetration testing, web application security, network defense, and CTF write-ups. Explore projects, research, bug bounties, and learning resources at hulobiral.online."
+    />
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.hulobiral.online/">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://hulobiral.online/" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Hulo Biral">
-  <meta property="og:title" content="Rupam Ghosh (Hulo Biral) — Cybersecurity Portfolio">
-  <meta property="og:description" content="Cybersecurity student specializing in ethical hacking, penetration testing, web security, CTFs, and bug bounty. Projects, tools, and contact at hulobiral.online.">
-  <meta property="og:url" content="https://www.hulobiral.online/">
-  <meta property="og:image" content="https://www.hulobiral.online/social-preview.jpg">
-  <meta property="og:image:alt" content="Portrait of Rupam Ghosh (Hulo Biral), Cybersecurity Student">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hulo Biral" />
+    <meta
+      property="og:title"
+      content="Rupam Ghosh (Hulo Biral) — Cybersecurity Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Cybersecurity student specializing in ethical hacking, penetration testing, web security, CTFs, and bug bounty. Projects, tools, and contact at hulobiral.online."
+    />
+    <meta property="og:url" content="https://hulobiral.online/" />
+    <meta
+      property="og:image"
+      content="https://hulobiral.online/social-preview.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Portrait of Rupam Ghosh (Hulo Biral), Cybersecurity Student"
+    />
 
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rupam Ghosh (Hulo Biral) — Cybersecurity">
-  <meta name="twitter:description" content="Ethical hacking, pentesting, web app security, CTFs, and bug bounty projects. Visit hulobiral.online for portfolio and contact.">
-  <meta name="twitter:image" content="https://www.hulobiral.online/social-preview.jpg">
-  <meta name="twitter:site" content="@hulo">
-  <meta name="twitter:creator" content="@hulo">
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Rupam Ghosh (Hulo Biral) — Cybersecurity"
+    />
+    <meta
+      name="twitter:description"
+      content="Ethical hacking, pentesting, web app security, CTFs, and bug bounty projects. Visit hulobiral.online for portfolio and contact."
+    />
+    <meta
+      name="twitter:image"
+      content="https://hulobiral.online/social-preview.jpg"
+    />
+    <meta name="twitter:site" content="@hulo" />
+    <meta name="twitter:creator" content="@hulo" />
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-  <!-- Preconnects -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Fonts and CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- Embedded styles for new features -->
+    <!-- Fonts and CSS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
 
+    <!-- Embedded styles for new features -->
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Structured Data (JSON-LD): Person -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Rupam Ghosh",
-    "alternateName": "Hulo Biral",
-    "url": "https://www.hulobiral.online/",
-    "image": "/pfp.jpeg",
-    "jobTitle": "Cybersecurity Student",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "Netaji Subhash Engineering College (NSEC)"
-    },
-    "sameAs": [
-      "https://x.com/hulo",
-      "https://github.com/hul0",
-      "https://www.linkedin.com/in/hulo"
-    ]
-  }
-  </script>
-</head>
+    <!-- Structured Data (JSON-LD): Person -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rupam Ghosh",
+        "alternateName": "Hulo Biral",
+        "url": "https://hulobiral.online/",
+        "image": "/pfp.jpeg",
+        "jobTitle": "Cybersecurity Student",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Netaji Subhash Engineering College (NSEC)"
+        },
+        "sameAs": [
+          "https://x.com/hulo",
+          "https://github.com/hul0",
+          "https://www.linkedin.com/in/hulo"
+        ]
+      }
+    </script>
+  </head>
 
-<body>
+  <body>
     <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
     <!-- Particle Background -->
     <canvas id="particles-canvas"></canvas>
-    
+
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-white/5 transition-all duration-300">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="flex items-center justify-between h-20">
-                <!-- YOUR INITIALS -->
-                <a href="#home" class="text-2xl font-bold text-gradient">HB</a>
-                
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
-                    <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
-                    <a href="#education" class="nav-link text-gray-300 hover:text-white">Education</a>
-                    <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
-                </div>
-                
-                <a href="#contact" class="hidden md:block px-6 py-2 bg-white text-black rounded-full hover-lift font-medium transition-colors duration-300 hover:bg-gray-200">
-                    Contact
-                </a>
-                
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white z-[60]">
-                    <svg class="w-6 h-6 menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                     <svg class="w-6 h-6 menu-icon-close hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-white/5 transition-all duration-300"
+    >
+      <div class="container mx-auto px-6 lg:px-12">
+        <div class="flex items-center justify-between h-20">
+          <!-- YOUR INITIALS -->
+          <a href="#home" class="text-2xl font-bold text-gradient">HB</a>
+
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#home" class="nav-link text-gray-300 hover:text-white"
+              >Home</a
+            >
+            <a href="#about" class="nav-link text-gray-300 hover:text-white"
+              >About</a
+            >
+            <a href="#education" class="nav-link text-gray-300 hover:text-white"
+              >Education</a
+            >
+            <a href="#contact" class="nav-link text-gray-300 hover:text-white"
+              >Contact</a
+            >
+          </div>
+
+          <a
+            href="#contact"
+            class="hidden md:block px-6 py-2 bg-white text-black rounded-full hover-lift font-medium transition-colors duration-300 hover:bg-gray-200"
+          >
+            Contact
+          </a>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-white z-[60]">
+            <svg
+              class="w-6 h-6 menu-icon-open"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+            <svg
+              class="w-6 h-6 menu-icon-close hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
         </div>
+      </div>
     </nav>
-    
+
     <!-- Mobile menu -->
     <div id="mobile-menu" class="md:hidden glass-dark z-[55]">
-        <div class="flex flex-col items-center justify-center h-full space-y-8">
-            <a href="#home" class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors">Home</a>
-            <a href="#about" class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors">About</a>
-            <a href="#education" class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors">Education</a>
-            <a href="#contact" class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors">Contact</a>
-        </div>
+      <div class="flex flex-col items-center justify-center h-full space-y-8">
+        <a
+          href="#home"
+          class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors"
+          >Home</a
+        >
+        <a
+          href="#about"
+          class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors"
+          >About</a
+        >
+        <a
+          href="#education"
+          class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors"
+          >Education</a
+        >
+        <a
+          href="#contact"
+          class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors"
+          >Contact</a
+        >
+      </div>
     </div>
 
     <!-- Navigation Dots -->
-    <div class="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col space-y-4">
-        <div class="nav-dot active" data-section="home"></div>
-        <div class="nav-dot" data-section="about"></div>
-        <div class="nav-dot" data-section="showcase"></div>
-        <div class="nav-dot" data-section="education"></div>
-        <div class="nav-dot" data-section="contact"></div>
+    <div
+      class="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col space-y-4"
+    >
+      <div class="nav-dot active" data-section="home"></div>
+      <div class="nav-dot" data-section="about"></div>
+      <div class="nav-dot" data-section="showcase"></div>
+      <div class="nav-dot" data-section="education"></div>
+      <div class="nav-dot" data-section="contact"></div>
     </div>
-    
+
     <main>
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative z-10 py-20">
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="min-h-screen flex items-center justify-center relative z-10 py-20"
+      >
         <div class="container mx-auto px-6 lg:px-12">
-            <div class="max-w-4xl mx-auto text-center">
-                <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-8 animate-fadeInUp">Welcome to my universe</p>
-                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp stagger-1">
-                    <span class="font-display font-normal">I'm</span> 
-                    <span class="text-gradient">Rupam Ghosh</span>
-                </h1>
-                <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fadeInUp stagger-2 min-h-[48px]">
-                    <span class="typing-cursor"></span>
-                </p>
-                <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-12 animate-fadeInUp stagger-3">
-                    With great power , comes great responsibilities.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp stagger-4">
-                    <a href="#about" class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200">
-                        Explore My World
-                    </a>
-                    <a href="/resume.pdf" download="Rupam-Ghosh-Resume.pdf" class="px-8 py-4 glass border border-white/10 text-white rounded-full hover-lift font-medium">
-                        Download Resume
-                    </a>
-                </div>
+          <div class="max-w-4xl mx-auto text-center">
+            <p
+              class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-8 animate-fadeInUp"
+            >
+              Welcome to my universe
+            </p>
+            <h1
+              class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp stagger-1"
+            >
+              <span class="font-display font-normal">I'm</span>
+              <span class="text-gradient">Rupam Ghosh</span>
+            </h1>
+            <p
+              class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fadeInUp stagger-2 min-h-[48px]"
+            >
+              <span class="typing-cursor"></span>
+            </p>
+            <p
+              class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-12 animate-fadeInUp stagger-3"
+            >
+              With great power , comes great responsibilities.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp stagger-4"
+            >
+              <a
+                href="#about"
+                class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200"
+              >
+                Explore My World
+              </a>
+              <a
+                href="/resume.pdf"
+                download="Rupam-Ghosh-Resume.pdf"
+                class="px-8 py-4 glass border border-white/10 text-white rounded-full hover-lift font-medium"
+              >
+                Download Resume
+              </a>
             </div>
-            
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
-                <div class="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center">
-                    <div class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce"></div>
-                </div>
+          </div>
+
+          <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+            <div
+              class="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center"
+            >
+              <div
+                class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce"
+              ></div>
             </div>
+          </div>
         </div>
-    </section>
-    
-    <!-- About Section -->
-    <section id="about" class="min-h-screen flex items-center relative z-10 py-20">
+      </section>
+
+      <!-- About Section -->
+      <section
+        id="about"
+        class="min-h-screen flex items-center relative z-10 py-20"
+      >
         <div class="container mx-auto px-6 lg:px-12">
-            <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                <div class="order-2 lg:order-1">
-                    <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">About Me</p>
-                    <h2 class="text-3xl md:text-5xl font-bold mb-6">
-                        Passionate about <span class="text-gradient">Cybersecurity</span>
-                    </h2>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        A dedicated and curious Cybersecurity Student with a passion for developing secure and robust applications. With a vision for a safer digital future, I'm constantly exploring the realms of web/app development and ethical hacking.
-                    </p>
-                    <p class="text-gray-400 mb-8 leading-relaxed">
-                        Specializing in penetration testing and web application security, I thrive on solving complex problems and learning new technologies. My goal is to bridge the gap between building innovative solutions and ensuring they are resilient against modern threats.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6 mb-8">
-                        <div class="glass p-4 rounded-lg">
-                            <p class="text-2xl md:text-3xl font-bold text-gradient mb-1">70+</p>
-                            <p class="text-xs sm:text-sm text-gray-400">Skills Learned</p>
-                        </div>
-                        <div class="glass p-4 rounded-lg">
-                            <p class="text-2xl md:text-3xl font-bold text-gradient mb-1">3+</p>
-                            <p class="text-xs sm:text-sm text-gray-400">Years Experience</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex gap-4 flex-wrap">
-                        <a href="https://github.com/hul0" target="_blank" rel="noopener noreferrer" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer" aria-label="GitHub Profile">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                        <a href="https://linkedin.com/in/hulo" target="_blank" rel="noopener noreferrer" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer" aria-label="LinkedIn Profile">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </a>
-                        <a href="https://x.com/hulo" target="_blank" rel="noopener noreferrer" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer" aria-label="X (Twitter) Profile">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        </a>
-                        <a href="https://instagram.com/hulobiral" target="_blank" rel="noopener noreferrer" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer" aria-label="Instagram Profile">
-                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"/></svg>
-                        </a>
-                         <a href="https://leetcode.com/u/hul0" target="_blank" rel="noopener noreferrer" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer" aria-label="LeetCode Profile">
-                 <svg width="24px" height="24px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" fill="white"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+          <div
+            class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto"
+          >
+            <div class="order-2 lg:order-1">
+              <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
+                About Me
+              </p>
+              <h2 class="text-3xl md:text-5xl font-bold mb-6">
+                Passionate about
+                <span class="text-gradient">Cybersecurity</span>
+              </h2>
+              <p class="text-gray-300 mb-6 leading-relaxed">
+                A dedicated and curious Cybersecurity Student with a passion for
+                developing secure and robust applications. With a vision for a
+                safer digital future, I'm constantly exploring the realms of
+                web/app development and ethical hacking.
+              </p>
+              <p class="text-gray-400 mb-8 leading-relaxed">
+                Specializing in penetration testing and web application
+                security, I thrive on solving complex problems and learning new
+                technologies. My goal is to bridge the gap between building
+                innovative solutions and ensuring they are resilient against
+                modern threats.
+              </p>
+
+              <div class="grid grid-cols-2 gap-6 mb-8">
+                <div class="glass p-4 rounded-lg">
+                  <p class="text-2xl md:text-3xl font-bold text-gradient mb-1">
+                    70+
+                  </p>
+                  <p class="text-xs sm:text-sm text-gray-400">Skills Learned</p>
+                </div>
+                <div class="glass p-4 rounded-lg">
+                  <p class="text-2xl md:text-3xl font-bold text-gradient mb-1">
+                    3+
+                  </p>
+                  <p class="text-xs sm:text-sm text-gray-400">
+                    Years Experience
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 flex-wrap">
+                <a
+                  href="https://github.com/hul0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
+                  aria-label="GitHub Profile"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
                 </a>
-                    </div>
-                </div>
-                
-                <div class="order-1 lg:order-2 relative">
-                    <div class="relative floating">
-                        <div class="absolute inset-0 bg-white rounded-2xl blur-3xl opacity-10"></div>
-                        <img src="/pfp.jpeg" alt="Profile of Rupam Ghosh" class="relative rounded-2xl w-full max-w-sm sm:max-w-md mx-auto glass" onerror="this.onerror=null;this.src='https://placehold.co/600x600/000000/FFFFFF?text=HB';">
-                    </div>
-                </div>
+                <a
+                  href="https://linkedin.com/in/hulo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
+                  aria-label="LinkedIn Profile"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://x.com/hulo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
+                  aria-label="X (Twitter) Profile"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://instagram.com/hulobiral"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
+                  aria-label="Instagram Profile"
+                >
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://leetcode.com/u/hul0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
+                  aria-label="LeetCode Profile"
+                >
+                  <svg
+                    width="24px"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="white"
+                  >
+                    <path
+                      d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
+
+            <div class="order-1 lg:order-2 relative">
+              <div class="relative floating">
+                <div
+                  class="absolute inset-0 bg-white rounded-2xl blur-3xl opacity-10"
+                ></div>
+                <img
+                  src="/pfp.jpeg"
+                  alt="Profile of Rupam Ghosh"
+                  class="relative rounded-2xl w-full max-w-sm sm:max-w-md mx-auto glass"
+                  onerror="this.onerror=null;this.src='https://placehold.co/600x600/000000/FFFFFF?text=HB';"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-    
-    <!-- Showcase Section -->
-    <section id="showcase" class="min-h-screen flex items-center relative z-10 py-20">
+      </section>
+
+      <!-- Showcase Section -->
+      <section
+        id="showcase"
+        class="min-h-screen flex items-center relative z-10 py-20"
+      >
         <div class="container mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16">
-                <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Explore</p>
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">
-                    My <span class="text-gradient">Digital Universe</span>
-                </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    Dive deeper into my expertise and creative work
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <a href="#" class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer">
-                    <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Skills</h3>
-                    <p class="text-gray-400 text-sm">Technical expertise</p>
-                </a>
-                
-                <a href="#" class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer">
-                    <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Projects</h3>
-                    <p class="text-gray-400 text-sm">Portfolio showcase</p>
-                </a>
-                
-                <a href="#" class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer">
-                    <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Tech Stack</h3>
-                    <p class="text-gray-400 text-sm">Tools & frameworks</p>
-                </a>
-                
-                <a href="#" class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer">
-                    <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Blog</h3>
-                    <p class="text-gray-400 text-sm">Thoughts & insights</p>
-                </a>
-            </div>
+          <div class="text-center mb-16">
+            <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
+              Explore
+            </p>
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">
+              My <span class="text-gradient">Digital Universe</span>
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+              Dive deeper into my expertise and creative work
+            </p>
+          </div>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+          >
+            <a
+              href="#"
+              class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer"
+            >
+              <div
+                class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Skills</h3>
+              <p class="text-gray-400 text-sm">Technical expertise</p>
+            </a>
+
+            <a
+              href="#"
+              class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer"
+            >
+              <div
+                class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Projects</h3>
+              <p class="text-gray-400 text-sm">Portfolio showcase</p>
+            </a>
+
+            <a
+              href="#"
+              class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer"
+            >
+              <div
+                class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Tech Stack</h3>
+              <p class="text-gray-400 text-sm">Tools & frameworks</p>
+            </a>
+
+            <a
+              href="#"
+              class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer"
+            >
+              <div
+                class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <svg
+                  class="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Blog</h3>
+              <p class="text-gray-400 text-sm">Thoughts & insights</p>
+            </a>
+          </div>
         </div>
-    </section>
-    
-    <!-- Education Section -->
-    <section id="education" class="min-h-screen flex items-center relative z-10 py-20">
+      </section>
+
+      <!-- Education Section -->
+      <section
+        id="education"
+        class="min-h-screen flex items-center relative z-10 py-20"
+      >
+        <div class="container mx-20 px-6 lg:px-12 py-12">
+          <div class="text-center mb-16">
+            <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
+              Academics
+            </p>
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">
+              Educational <span class="text-gradient">Background</span>
+            </h2>
+          </div>
+
+          <div class="max-w-3xl mx-auto space-y-8">
+            <div class="glass rounded-2xl p-6 sm:p-8 hover-lift">
+              <div class="flex flex-col sm:flex-row sm:items-start gap-6">
+                <!-- University Logo -->
+                <div class="flex-shrink-0">
+                  <img
+                    src="https://www.nsec.ac.in/images/nsec_logo_w1013xh1363.png"
+                    alt="Netaji Subhash Engineering College Logo"
+                    class="w-16 h-16 rounded-full bg-white/10 p-1 object-contain"
+                    onerror="this.onerror=null;this.src='https://placehold.co/64x64/FFFFFF/000000?text=NSEC';"
+                  />
+                </div>
+                <div class="flex-grow">
+                  <div
+                    class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
+                  >
+                    <div>
+                      <h3 class="text-xl sm:text-2xl font-semibold mb-1">
+                        Bachelor of Technology in Computer Science
+                      </h3>
+                      <p class="text-gray-400">
+                        Netaji Subhash Engineering College
+                      </p>
+                    </div>
+                    <span
+                      class="text-sm text-gray-500 mt-2 md:mt-0 flex-shrink-0"
+                      >2025 - 2029</span
+                    >
+                  </div>
+                  <p class="text-gray-300">
+                    Focusing on core principles of software engineering,
+                    algorithms, and network security. My coursework has provided
+                    a strong foundation in both theoretical and practical
+                    aspects of computer science, preparing me to tackle
+                    real-world challenges in the tech industry.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+           <!-- <div class="max-w-3xl mx-auto space-y-8">
+            <div class="glass rounded-2xl p-6 sm:p-8 hover-lift">
+              <div class="flex flex-col sm:flex-row sm:items-start gap-6">
+                
+                <div class="flex-shrink-0">
+                  <img
+                    src="https://www.nsec.ac.in/images/nsec_logo_w1013xh1363.png"
+                    alt="Netaji Subhash Engineering College Logo"
+                    class="w-16 h-16 rounded-full bg-white/10 p-1 object-contain"
+                    onerror="this.onerror=null;this.src='https://placehold.co/64x64/FFFFFF/000000?text=NSEC';"
+                  />
+                </div>
+                <div class="flex-grow">
+                  <div
+                    class="flex flex-col md:flex-row md:items-center md:justify-between mb-2"
+                  >
+                    <div>
+                      <h3 class="text-xl sm:text-2xl font-semibold mb-1">
+                        Higher Secondary Education
+                      </h3>
+                      <p class="text-gray-400">
+                        Diamond Harbour High School
+                      </p>
+                    </div>
+                    <span
+                      class="text-sm text-gray-500 mt-2 md:mt-0 flex-shrink-0"
+                      >2017-2025</span
+                    >
+                  </div>
+                  <p class="text-gray-300">
+                    Focusing on core principles of software engineering,
+                    algorithms, and network security. My coursework has provided
+                    a strong foundation in both theoretical and practical
+                    aspects of computer science, preparing me to tackle
+                    real-world challenges in the tech industry.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section
+        id="contact"
+        class="min-h-screen flex items-center relative z-10 py-20"
+      >
         <div class="container mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16">
-                <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Academics</p>
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">
-                    Educational <span class="text-gradient">Background</span>
-                </h2>
+          <div class="max-w-4xl mx-auto text-center">
+            <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
+              Get in Touch
+            </p>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">
+              Let's Create <span class="text-gradient">Something Amazing</span>
+            </h2>
+            <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
+              Ready to bring your ideas to life? Let's connect and explore the
+              possibilities.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <a
+                href="mailto:nmrupam@proton.me"
+                class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200"
+              >
+                Send Email
+              </a>
             </div>
-            
-            <div class="max-w-3xl mx-auto space-y-8">
-                 <div class="glass rounded-2xl p-6 sm:p-8 hover-lift">
-                    <div class="flex flex-col sm:flex-row sm:items-start gap-6">
-                        <!-- University Logo -->
-                        <div class="flex-shrink-0">
-                            <img src="https://www.nsec.ac.in/images/nsec_logo_w1013xh1363.png" alt="Netaji Subhash Engineering College Logo" class="w-16 h-16 rounded-full bg-white/10 p-1 object-contain" onerror="this.onerror=null;this.src='https://placehold.co/64x64/FFFFFF/000000?text=NSEC';">
-                        </div>
-                        <div class="flex-grow">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                                 <div>
-                                    <h3 class="text-xl sm:text-2xl font-semibold mb-1">Bachelor of Technology in Computer Science</h3>
-                                    <p class="text-gray-400">Netaji Subhash Engineering College</p>
-                                </div>
-                                <span class="text-sm text-gray-500 mt-2 md:mt-0 flex-shrink-0">2025 - 2029</span>
-                            </div>
-                            <p class="text-gray-300">Focusing on core principles of software engineering, algorithms, and network security. My coursework has provided a strong foundation in both theoretical and practical aspects of computer science, preparing me to tackle real-world challenges in the tech industry.</p>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="flex justify-center flex-wrap gap-x-6 gap-y-3">
+              <a
+                href="https://linkedin.com/in/hulo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-white transition-colors"
+                >LinkedIn</a
+              >
+              <a
+                href="https://github.com/hul0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-white transition-colors"
+                >GitHub</a
+              >
+              <a
+                href="https://x.com/hulo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-white transition-colors"
+                >X (Twitter)</a
+              >
+              <a
+                href="https://instagram.com/hulobiral"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-white transition-colors"
+                >Instagram</a
+              >
+              <a
+                href="https://leetcode.com/u/hul0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-white transition-colors"
+                >LeetCode</a
+              >
             </div>
+          </div>
         </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="min-h-screen flex items-center relative z-10 py-20">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="max-w-4xl mx-auto text-center">
-                <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">Get in Touch</p>
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">
-                    Let's Create <span class="text-gradient">Something Amazing</span>
-                </h2>
-                <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
-                    Ready to bring your ideas to life? Let's connect and explore the possibilities.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                    <a href="mailto:nmrupam@proton.me" class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200">
-                        Send Email
-                    </a>
-                </div>
-                
-                <div class="flex justify-center flex-wrap gap-x-6 gap-y-3">
-                    <a href="https://linkedin.com/in/hulo" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
-                    <a href="https://github.com/hul0" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
-                    <a href="https://x.com/hulo" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">X (Twitter)</a>
-                    <a href="https://instagram.com/hulobiral" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
-                    <a href="https://leetcode.com/u/hul0" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">LeetCode</a>
-                </div>
-            </div>
-        </div>
-    </section>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="relative z-10 glass-dark border-t border-white/5 py-8">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-center text-center">
-                <p class="text-gray-400 text-sm">© 2025 Rupam Ghosh. Crafted with passion.</p>
-                <p class="text-gray-400 text-sm mt-4 md:mt-0">Design by Rupam Ghosh & Code by Gemini</p>
-            </div>
+      <div class="container mx-auto px-6 lg:px-12">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-center"
+        >
+          <p class="text-gray-400 text-sm">
+            © 2025 Rupam Ghosh. Crafted with passion.
+          </p>
+          <p class="text-gray-400 text-sm mt-4 md:mt-0">
+            Vibecoded using Gemini & Claude
+          </p>
         </div>
+      </div>
     </footer>
-    
+
     <script src="script.js"></script>
-    
-</body>
+  </body>
 </html>
