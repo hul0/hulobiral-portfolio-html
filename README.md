@@ -84,7 +84,7 @@ To run and modify this project locally, follow these steps:
 
 ## 🤝 Contribution
 
-Contributions are welcome! If you find any bugs, have suggestions for new features, or want to improve the codebase, please check out the **[CONTRIBUTION.md](CONTRIBUTION.md)** file for guidelines.
+Contributions are welcome! If you find any bugs, have suggestions for new features, or want to improve the codebase, please check out the **[CONTRIBUTING.md](CONTRIBUTING.md)** file for guidelines.
 
 ---
 
@@ -99,4 +99,5 @@ This project is licensed under the **MIT License**. See the **[LICENSE](LICENSE)
 * **Email:** `nmrupam@proton.me`
 * **GitHub:** **[@hul0](https://github.com/hul0)**
 * **LinkedIn:** **[/in/hulo](https://www.linkedin.com/in/hulo)**
+
 
