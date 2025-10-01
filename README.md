@@ -46,7 +46,7 @@ This project is a classic and robust static website built entirely with foundati
 
 ## 🏗️ Project Structure
 ```
-├── 2025-09-30_18-36.png (Academic Screenshot)
+├── CONTRIBUTION.md (Guide on how to contribute to this repo)
 ├── CNAME (Domain configuration for GitHub Pages)
 ├── LICENSE (MIT License file)
 ├── index.html (Main application file)
@@ -99,3 +99,4 @@ This project is licensed under the **MIT License**. See the **[LICENSE](LICENSE)
 * **Email:** `nmrupam@proton.me`
 * **GitHub:** **[@hul0](https://github.com/hul0)**
 * **LinkedIn:** **[/in/hulo](https://www.linkedin.com/in/hulo)**
+
