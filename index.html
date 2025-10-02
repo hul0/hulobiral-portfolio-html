@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <!-- AOS cdn -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Rupam Ghosh (Hulo Biral) — Cybersecurity Student | Portfolio</title>
     <meta
       name="description"
@@ -267,6 +269,7 @@
       <!-- About Section -->
       <section
         id="about"
+        data-aos="fade-up"
         class="min-h-screen flex items-center relative z-10 py-20"
       >
         <div class="container mx-auto px-6 lg:px-12">
@@ -409,6 +412,7 @@
 
       <!-- Showcase Section -->
       <section
+       data-aos="fade-up"
         id="showcase"
         class="min-h-screen flex items-center relative z-10 py-20"
       >
@@ -534,6 +538,7 @@
       <!-- Education Section -->
       <section
         id="education"
+        data-aos="fade-up"
         class="min-h-screen flex items-center relative z-10 py-20"
       >
         <div class="container mx-20 px-6 lg:px-12 py-12">
@@ -635,6 +640,7 @@
       <!-- Contact Section -->
       <section
         id="contact"
+        data-aos="fade-up"
         class="min-h-screen flex items-center relative z-10 py-20"
       >
         <div class="container mx-auto px-6 lg:px-12">
@@ -755,5 +761,10 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- AOS initiated -->
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
