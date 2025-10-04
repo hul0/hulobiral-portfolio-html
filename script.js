@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.style.width = `${window.innerWidth}px`;
     canvas.style.height = `${window.innerHeight}px`;
 
-    let particleCount = window.innerWidth < 768 ? 480 : 1200;
+    let particleCount = window.innerWidth < 768 ? 400 : 1000;
     particles = [];
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle());

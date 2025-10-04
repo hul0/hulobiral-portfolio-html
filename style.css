@@ -85,6 +85,17 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            transition: background 0.3s ease;
+        }
+
+        /* Hover effects for headings */
+        h1:hover .text-gradient,
+        h2:hover .text-gradient,
+        h3:hover .text-gradient {
+            background: linear-gradient(135deg, #b0b0b0 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         /* Hover lift with updated shadow */
