@@ -6,7 +6,7 @@
   </a>
 </p>
 
-This repository hosts the source code for the personal portfolio of **Rupam Ghosh** (aka **Hulo Biral**), a dedicated Cybersecurity Student specializing in ethical hacking, penetration testing, and web application security. The website serves as a digital universe to showcase academic background, technical skills, projects, and contact information.
+This repository hosts the source code for the personal portfolio of **Rupam Ghosh** (aka **Hulo Biral**), a dedicated Cybersecurity Student specializing in ethical hacking, penetration testing, and web application security. The website serves as a digital universe to showcase academic background, technical skills, projects, and contact information....
 
 ---
 
