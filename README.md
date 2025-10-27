@@ -1,12 +1,12 @@
-# Rupam Ghosh (Hulo Biral) - Cybersecurity Portfolio Website
+# Hulo Biral - Cybersecurity Portfolio Website
 
 <p align="center">
-  <a href="./social-preview.png" target="_blank">
-    <img src="./social-preview.png" alt="Rupam Ghosh Portfolio Screenshot" style="border-radius: 8px;">
+  <a href="./hulo-biral-preview.png" target="_blank">
+    <img src="./hulo-biral-preview.png" alt="Hulo Biral Portfolio Screenshot" style="border-radius: 8px;">
   </a>
 </p>
 
-This repository hosts the source code for the personal portfolio of **Rupam Ghosh** (aka **Hulo Biral**), a dedicated Cybersecurity Student specializing in ethical hacking, penetration testing, and web application security. The website serves as a digital universe to showcase academic background, technical skills, projects, and contact information.
+This repository hosts the source code for the personal portfolio of **Hulo Biral** , a Cybersecurity Student specializing in ethical hacking, penetration testing, and web application security. The website serves as a digital universe to showcase academic background, technical skills, projects, and contact information.
 
 ---
 
@@ -25,7 +25,7 @@ The portfolio is built with modern web development practices, focusing on perfor
 * **Responsive & Dynamic Design:** Optimized for all devices (mobile, tablet, desktop) with a dark, space-themed aesthetic.
 * **Custom Cursor:** Enhances desktop user experience with magnetic hover effects.
 * **Particle Background:** A subtle, animated canvas background creates an immersive atmosphere.
-* **Typing Animation:** Dynamic text in the hero section introduces Rupam Ghosh's multiple roles.
+* **Typing Animation:** Dynamic text in the hero section introduces Hulo's multiple roles.
 * **Smooth Navigation:** Scroll-spy dots and fixed navigation for seamless movement between sections.
 * **SEO Optimized:** Comprehensive Open Graph (OG) and Twitter Card metadata for social sharing, plus JSON-LD structured data.
 
@@ -42,19 +42,7 @@ This project is a classic and robust static website built entirely with foundati
     * **Google Fonts:** Inter and Playfair Display for typography.
     * **Tailwind CSS (via CDN):** Used for rapid, utility-first styling and responsive layout adjustments within `index.html`.
 
----
 
-## 🏗️ Project Structure
-```
-├── CONTRIBUTION.md (Guide on how to contribute to this repo)
-├── CNAME (Domain configuration for GitHub Pages)
-├── LICENSE (MIT License file)
-├── index.html (Main application file)
-├── pfp.jpeg (Profile Picture)
-├── script.js (All JavaScript logic and dynamic effects)
-├── social-preview.png (Social sharing preview image)
-└── style.css (All custom CSS styling, animations, and dark theme)
-```
 ---
 
 ## ⚙️ Local Development

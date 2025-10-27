@@ -1,6 +1,6 @@
-# 🤝 Contributing to Rupam Ghosh's Portfolio
+# 🤝 Contributing to Hulo's Portfolio
 
-Thank you for considering contributing to the Rupam Ghosh (Hulo Biral) portfolio website! Your input, whether it's reporting a bug, suggesting a new feature, or submitting code changes, is highly valued.
+Thank you for considering contributing to the Hulo Biral portfolio website! Your input, whether it's reporting a bug, suggesting a new feature, or submitting code changes, is highly valued.
 
 This document outlines the guidelines for contributing to this project.
 
