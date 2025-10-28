@@ -3,13 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="stylesheet" href="style.css">
+    
     <!-- AOS cdn -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" ></script> 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <title>Hulo Biral — Cybersecurity Enthusiast</title>
+    
+    <title>Cybersecurity Portfolio: Hulo Biral | Ethical Hacking & Penetration Testing Expert</title>
     <meta
       name="description"
-      content="Hulo Biral — Cybersecurity student focused on ethical hacking, penetration testing, web application security, network defense, and CTF write-ups. Explore projects, research, bug bounties, and learning resources at hulobiral.online."
+      content="Hulo Biral's cybersecurity portfolio showcasing ethical hacking projects, penetration testing tools, CTF write-ups, bug bounty reports, web application security, network defense, and research for aspiring hackers at hulobiral.online."
     />
 
     <!-- Canonical -->
@@ -20,11 +26,11 @@
     <meta property="og:site_name" content="Hulo Biral" />
     <meta
       property="og:title"
-      content="Hulo Biral — Cybersecurity Enthusiast"
+      content="Cybersecurity Portfolio: Hulo Biral | Ethical Hacking Expert"
     />
     <meta
       property="og:description"
-      content="Cybersecurity student specializing in ethical hacking, penetration testing, web security, CTFs, and bug bounty. Projects, tools, and contact at hulobiral.online."
+      content="Cybersecurity student specializing in ethical hacking, penetration testing, web application security, network defense, CTFs, and bug bounty. Explore projects, tools, research, and contact at hulobiral.online."
     />
     <meta property="og:url" content="https://hulobiral.online/" />
     <meta
@@ -34,18 +40,18 @@
 
     <meta
       property="og:image:alt"
-      content="Portrait of Hulo Biral , Cybersecurity Enthusiast"
+      content="Portrait of Hulo Biral, Cybersecurity Enthusiast and Ethical Hacker"
     />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Hulo Biral — Cybersecurity"
+      content="Hulo Biral — Cybersecurity Portfolio"
     />
     <meta
       name="twitter:description"
-      content="Ethical hacking, pentesting, web app security projects. Visit hulobiral.online for portfolio and contact."
+      content="Ethical hacking projects, penetration testing tools, CTF write-ups, web security research. Visit hulobiral.online for cybersecurity portfolio and contact."
     />
     <meta
       name="twitter:image"
@@ -71,7 +77,7 @@
     <!-- Embedded styles for new features -->
 
     <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" ></script>
 
     <!-- Structured Data (JSON-LD): Person -->
     <script type="application/ld+json">
@@ -82,7 +88,11 @@
         "alternateName": "Hulo Biral",
         "url": "https://hulobiral.online/",
         "image": "/hulo-biral-pfp.jpg",
-        "jobTitle": "Cybersecurity Student",
+        "jobTitle": "Cybersecurity Student & Ethical Hacker",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Independent"
+        },
         "affiliation": {
           "@type": "CollegeOrUniversity",
           "name": "Netaji Subhash Engineering College (NSEC)"
@@ -91,6 +101,51 @@
           "https://x.com/hulo",
           "https://github.com/hul0",
           "https://www.linkedin.com/in/hulo"
+        ],
+        "knowsAbout": [
+          "Ethical Hacking",
+          "Penetration Testing",
+          "Web Application Security",
+          "Network Defense",
+          "CTF Write-Ups",
+          "Bug Bounty Programs",
+          "Vulnerability Assessment",
+          "Security Research"
+        ],
+        "description": "Cybersecurity student at NSEC specializing in ethical hacking, penetration testing, and web application security with hands-on experience in CTF competitions, bug bounties, and network defense projects."
+      }
+    </script>
+
+    <!-- Structured Data (JSON-LD): FAQ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are Hulo Biral's key cybersecurity skills and expertise?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hulo Biral specializes in ethical hacking, penetration testing, web application security, network defense, CTF write-ups, and bug bounty hunting. With 70+ skills learned and 3+ years of experience, expertise includes tools like Kali Linux, Burp Suite, and Metasploit for vulnerability assessment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to contact Hulo Biral for ethical hacking or penetration testing projects?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Contact Hulo Biral via email at nmrupam@proton.me or through the contact section. Connect on LinkedIn, GitHub, or X for cybersecurity collaborations, bug bounty discussions, or portfolio consultations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What tools and technologies does Hulo Biral use in penetration testing and ethical hacking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hulo Biral uses industry-standard tools including Kali Linux for ethical hacking, Burp Suite for web application testing, Metasploit for exploitation, Nmap and Wireshark for network security analysis, and custom scripts for CTF challenges and bug bounty research."
+            }
+          }
         ]
       }
     </script>
@@ -111,7 +166,7 @@
       <div class="container mx-auto px-6 lg:px-12">
         <div class="flex items-center justify-between h-20">
           <!-- YOUR INITIALS -->
-          <a href="#home" class="text-2xl font-bold text-gradient">HB</a>
+          <a href="#home" class="text-2xl font-bold text-gradient" aria-label="Hulo Biral Cybersecurity Portfolio Home">HB</a>
 
           <div class="hidden md:flex items-center space-x-8">
             <a href="#home" class="nav-link text-gray-300 hover:text-white"
@@ -120,9 +175,7 @@
             <a href="#about" class="nav-link text-gray-300 hover:text-white"
               >About</a
             >
-            <a href="#education" class="nav-link text-gray-300 hover:text-white"
-              >Education</a
-            >
+            
             <a href="#contact" class="nav-link text-gray-300 hover:text-white"
               >Contact</a
             >
@@ -131,12 +184,13 @@
           <a
             href="#contact"
             class="hidden md:block px-6 py-2 bg-white text-black rounded-full hover-lift font-medium transition-colors duration-300 hover:bg-gray-200"
+            aria-label="Contact Hulo Biral for Cybersecurity Projects"
           >
             Contact
           </a>
 
           <!-- Mobile menu button -->
-          <button id="mobile-menu-btn" class="md:hidden text-white z-[60]">
+          <button id="mobile-menu-btn" class="md:hidden text-white z-50">
             <svg
               class="w-6 h-6 menu-icon-open"
               fill="none"
@@ -169,7 +223,7 @@
     </nav>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="md:hidden glass-dark z-[55]">
+    <div id="mobile-menu" class="md:hidden glass-dark z-40">
       <div class="flex flex-col items-center justify-center h-full space-y-8">
         <a
           href="#home"
@@ -181,11 +235,7 @@
           class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors"
           >About</a
         >
-        <a
-          href="#education"
-          class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors"
-          >Education</a
-        >
+        
         <a
           href="#contact"
           class="mobile-link text-3xl text-gray-300 hover:text-white transition-colors"
@@ -198,11 +248,10 @@
     <div
       class="fixed right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col space-y-4"
     >
-      <div class="nav-dot active" data-section="home"></div>
-      <div class="nav-dot" data-section="about"></div>
-      <div class="nav-dot" data-section="showcase"></div>
-      <div class="nav-dot" data-section="education"></div>
-      <div class="nav-dot" data-section="contact"></div>
+      <div class="nav-dot active" data-section="home" aria-label="Navigate to Home"></div>
+      <div class="nav-dot" data-section="about" aria-label="Navigate to About"></div>
+      <div class="nav-dot" data-section="showcase" aria-label="Navigate to Showcase"></div>
+      <div class="nav-dot" data-section="contact" aria-label="Navigate to Contact"></div>
     </div>
 
     <main>
@@ -216,23 +265,26 @@
             <p
               class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-8 animate-fadeInUp"
             >
-              Welcome to my universe
+              Welcome to Hulo Biral's Cybersecurity Universe
             </p>
             <h1
               class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fadeInUp stagger-1"
             >
               <span class="font-display font-normal">I'm</span>
-              <span class="text-gradient">Hulo</span>
+              <span class="text-gradient">Hulo Biral</span>
+              <br>
+              <span class="text-cyan-400">Ethical Hacking Expert</span>
             </h1>
             <p
               class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-4 animate-fadeInUp stagger-2 min-h-[48px]"
             >
+              Cybersecurity Student Specializing in Penetration Testing & Web Security
               <span class="typing-cursor"></span>
             </p>
             <p
               class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-12 animate-fadeInUp stagger-3"
             >
-              With great power , comes great responsibilities.
+              Passionate about ethical hacking and network defense, I bring 3+ years of hands-on experience in CTF write-ups, bug bounties, and protecting digital infrastructure. With great power comes great responsibilities in cybersecurity.
             </p>
 
             <div
@@ -241,12 +293,13 @@
               <a
                 href="#about"
                 class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200"
+                aria-label="Explore Hulo Biral's Cybersecurity Journey"
               >
                 Explore My World
               </a>
               <a
                 href="/resume.pdf"
-                download="Rupam-Ghosh-Resume.pdf"
+                download="Hulo-Biral-Cybersecurity-Resume.pdf"
                 class="px-8 py-4 glass border border-white/10 text-white rounded-full hover-lift font-medium"
               >
                 Download Resume
@@ -281,22 +334,14 @@
                 About Me
               </p>
               <h2 class="text-3xl md:text-5xl font-bold mb-6">
-                Passionate about
-                <span class="text-gradient">Cybersecurity</span>
+                About Hulo Biral: Cybersecurity & Penetration Testing Journey
               </h2>
               <div class="glass rounded-2xl p-6 sm:p-8 hover-lift mb-8">
                 <p class="text-gray-300 mb-6 leading-relaxed">
-                  A dedicated and curious Cybersecurity Student with a passion for
-                  developing secure and robust applications. With a vision for a
-                  safer digital future, I'm constantly exploring the realms of
-                  web/app development and ethical hacking.
+                  A dedicated Cybersecurity Student with a passion for developing secure applications and ethical hacking. With a vision for a safer digital future, I'm exploring web/app development, penetration testing, and web application security to bridge innovative solutions with modern threat resilience.
                 </p>
                 <p class="text-gray-400 leading-relaxed">
-                  Specializing in penetration testing and web application
-                  security, I thrive on solving complex problems and learning new
-                  technologies. My goal is to bridge the gap between building
-                  innovative solutions and ensuring they are resilient against
-                  modern threats.
+                  Specializing in penetration testing, network defense, and CTF write-ups, I thrive on solving complex security problems using tools like Kali Linux, Burp Suite, and Metasploit. My 3+ years of experience include bug bounty programs, vulnerability assessments, and OWASP Top 10 identifications, keeping pace with 2025 trends in AI-driven threats and cloud security.
                 </p>
               </div>
 
@@ -305,14 +350,14 @@
                   <p class="text-2xl md:text-3xl font-bold text-gradient mb-1">
                     70+
                   </p>
-                  <p class="text-xs sm:text-sm text-gray-400">Skills Learned</p>
+                  <p class="text-xs sm:text-sm text-gray-400">Skills Learned in Ethical Hacking & Security</p>
                 </div>
                 <div class="glass p-4 rounded-lg">
                   <p class="text-2xl md:text-3xl font-bold text-gradient mb-1">
                     3+
                   </p>
                   <p class="text-xs sm:text-sm text-gray-400">
-                    Years Experience
+                    Years in Penetration Testing & Bug Bounties
                   </p>
                 </div>
               </div>
@@ -323,7 +368,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
-                  aria-label="GitHub Profile"
+                  aria-label="Hulo Biral GitHub Profile for Cybersecurity Projects"
                 >
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -336,7 +381,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
-                  aria-label="LinkedIn Profile"
+                  aria-label="Hulo Biral LinkedIn Profile for Networking"
                 >
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -349,7 +394,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
-                  aria-label="X (Twitter) Profile"
+                  aria-label="Hulo Biral X (Twitter) for Cybersecurity Updates"
                 >
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -362,7 +407,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
-                  aria-label="Instagram Profile"
+                  aria-label="Hulo Biral Instagram for Creative Content"
                 >
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -375,7 +420,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift cursor-pointer"
-                  aria-label="LeetCode Profile"
+                  aria-label="Hulo Biral LeetCode for Technical Skills"
                 >
                   <svg
                     width="24px"
@@ -400,8 +445,11 @@
                 ></div>
                 <img
                   src="/hulo-biral-pfp.jpg"
-                  alt="Profile of Hulo Biral"
+                  alt="Profile photo of Hulo Biral, Ethical Hacker and Cybersecurity Student at NSEC"
                   class="relative rounded-2xl w-full max-w-sm sm:max-w-md mx-auto glass"
+                  loading="lazy"
+                  width="400"
+                  height="400"
                   onerror="this.onerror=null;this.src='https://placehold.co/600x600/000000/FFFFFF?text=HB';"
                 />
               </div>
@@ -419,13 +467,13 @@
         <div class="container mx-auto px-6 lg:px-12">
           <div class="text-center mb-16">
             <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
-              Explore
+              Explore Cybersecurity Projects
             </p>
             <h2 class="text-3xl md:text-5xl font-bold mb-4">
               My <span class="text-gradient">Digital Universe</span>
             </h2>
             <p class="text-gray-400 max-w-2xl mx-auto">
-              Dive deeper into my expertise and creative work
+              Dive deeper into ethical hacking expertise, penetration testing tools, CTF write-ups, and cybersecurity research projects
             </p>
           </div>
 
@@ -435,6 +483,7 @@
             <a
               href="https://skills.hulobiral.online"
               class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer"
+              aria-label="Hulo Biral Cybersecurity Skills and Tools"
             >
               <div
                 class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
@@ -444,6 +493,7 @@
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     stroke-linecap="round"
@@ -454,12 +504,13 @@
                 </svg>
               </div>
               <h3 class="text-xl font-semibold mb-2">Skills</h3>
-              <p class="text-gray-400 text-sm">Technical expertise</p>
+              <p class="text-gray-400 text-sm">Ethical Hacking & Penetration Testing Expertise</p>
             </a>
 
             <a
               href="https://diary.hulobiral.online/404.html"
               class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer"
+              aria-label="Hulo Biral Cybersecurity Projects Portfolio"
             >
               <div
                 class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
@@ -469,6 +520,7 @@
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     stroke-linecap="round"
@@ -479,12 +531,13 @@
                 </svg>
               </div>
               <h3 class="text-xl font-semibold mb-2">Projects</h3>
-              <p class="text-gray-400 text-sm">Portfolio showcase</p>
+              <p class="text-gray-400 text-sm">Web Security & Bug Bounty Showcase</p>
             </a>
 
             <a
               href="https://skills.hulobiral.online"
               class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer"
+              aria-label="Hulo Biral Technical Stack for Network Defense"
             >
               <div
                 class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
@@ -494,6 +547,7 @@
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     stroke-linecap="round"
@@ -504,12 +558,13 @@
                 </svg>
               </div>
               <h3 class="text-xl font-semibold mb-2">Tech Stack</h3>
-              <p class="text-gray-400 text-sm">Tools & frameworks</p>
+              <p class="text-gray-400 text-sm">Tools for CTF & Vulnerability Assessment</p>
             </a>
 
             <a
               href="https://diary.hulobiral.online"
               class="group glass rounded-2xl p-6 sm:p-8 hover-lift cursor-pointer"
+              aria-label="Hulo Biral Blog on Cybersecurity Research"
             >
               <div
                 class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
@@ -519,6 +574,7 @@
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     stroke-linecap="round"
@@ -529,13 +585,11 @@
                 </svg>
               </div>
               <h3 class="text-xl font-semibold mb-2">Blog</h3>
-              <p class="text-gray-400 text-sm">Thoughts & insights</p>
+              <p class="text-gray-400 text-sm">Insights on Ethical Hacking & Security Trends</p>
             </a>
           </div>
         </div>
       </section>
-
-    
 
       <!-- Contact Section -->
       <section
@@ -549,17 +603,17 @@
               Get in Touch
             </p>
             <h2 class="text-3xl md:text-5xl font-bold mb-6">
-              Let's Create <span class="text-gradient">Something Amazing</span>
+              Let's Collaborate on Cybersecurity Projects
             </h2>
             <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
-              Ready to bring your ideas to life? Let's connect and explore the
-              possibilities.
+              Ready to discuss ethical hacking, penetration testing, bug bounties, or web security ideas? Let's connect for collaborations in network defense and CTF strategies.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <a
                 href="mailto:nmrupam@proton.me"
                 class="px-8 py-4 bg-white text-black rounded-full hover-lift font-medium magnetic-btn transition-colors duration-300 hover:bg-gray-200"
+                aria-label="Email Hulo Biral for Penetration Testing Consultation"
               >
                 Send Email
               </a>
@@ -576,10 +630,10 @@
           class="flex flex-col md:flex-row justify-between items-center text-center"
         >
           <p class="text-gray-400 text-sm">
-            © 2025 Hulo Biral. Crafted with passion.
+            © 2025 Hulo Biral | Cybersecurity Portfolio & Ethical Hacking Resources
           </p>
           <p class="text-gray-400 text-sm mt-4 md:mt-0">
-            Vibecoded using Gemini & Claude
+            Optimized for Penetration Testing Professionals & Students
           </p>
         </div>
         <div class="mt-8 flex justify-center flex-wrap gap-x-8 gap-y-6">
@@ -588,6 +642,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors"
+            aria-label="Connect with Hulo Biral on LinkedIn"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -601,6 +656,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors"
+            aria-label="Hulo Biral GitHub for Security Tools"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -614,6 +670,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors"
+            aria-label="Follow Hulo Biral on X for Hacking Tips"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -627,6 +684,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors"
+            aria-label="Hulo Biral Instagram for Security Visuals"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -640,6 +698,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors"
+            aria-label="Hulo Biral LeetCode for Coding Challenges"
           >
             <svg
               width="24px"
@@ -662,9 +721,7 @@
 
     <script src="script.js"></script>
 
-    <!-- AOS initiated -->
-    <script>
-      AOS.init();
-    </script>
+    
   </body>
+
 </html>

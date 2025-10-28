@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // --- INITIALIZE AOS ---
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
   // --- NAVBAR SCROLL EFFECT ---
   const nav = document.querySelector("nav");
   window.addEventListener("scroll", () => {
